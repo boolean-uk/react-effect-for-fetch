@@ -4,7 +4,7 @@ function ArtList({ users }) {
   return (
     <ul className="users-list">
       {users.map((user) => {
-        return <UsersListItem />;
+        return <UsersListItem user={user} />;
       })}
     </ul>
   );

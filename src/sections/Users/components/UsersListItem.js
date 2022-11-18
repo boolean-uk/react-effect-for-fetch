@@ -1,12 +1,9 @@
-function UsersListItem() {
+function UsersListItem({ user }) {
   return (
-    <li class="bg-blue">
-      <img
-        src="https://randomuser.me/api/portraits/med/men/76.jpg"
-        alt="Ritthy Ryan"
-      />
-      <h3>Mr Ritthy Ryan</h3>
-      <p>Email: ritthy.ryan@example.com</p>
+    <li className={`bg-${user.gender === "male" ? "blue" : "pink"}`}>
+      <img src={user.imageUrl} alt={user.name} />
+      <h3>{user.name}</h3>
+      <p>Email: {user.email} </p>
     </li>
   );
 }

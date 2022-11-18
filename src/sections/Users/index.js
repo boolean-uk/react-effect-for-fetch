@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import UsersList from "./components/UsersList";
 
 function UsersSection() {
@@ -7,7 +7,7 @@ function UsersSection() {
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=20")
       .then((res) => res.json())
-      .then((users) => setUsers(users.results));
+      .then((userData) => setUsers(userData.results));
   }, []);
 
   return (
