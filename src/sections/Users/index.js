@@ -1,12 +1,22 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 function UsersSection() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=20")
+      .then((res) => res.json())
+      .then((users) => setUsers(users.results));
+  }, []);
+
   return (
     <section>
       <h2>Users Section</h2>
-      <div className="scroll-container"></div>
+      <div className="scroll-container">
+        <ul className="users-list"> </ul>
+      </div>
     </section>
-  )
+  );
 }
 
-export default UsersSection
+export default UsersSection;
