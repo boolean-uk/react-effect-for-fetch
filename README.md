@@ -22,8 +22,8 @@ The aim of the exercise is to practice fetching data and rendering lists.
 
 Inside each section folder you will find:
 
-- an `index.js` file for the logic of each section **build everything here and then break it down into components**
-- a `template.html` that shows you an example of what your React components should create. Take note of `className` to get the styling working.
+- :) an `index.js` file for the logic of each section **build everything here and then break it down into components**
+- :) a `template.html` that shows you an example of what your React components should create. Take note of `className` to get the styling working.
 - a `components` folder with suggested components to create so you can practice props.
 
 For each section you will need to make a fetch request using the following APIs:
