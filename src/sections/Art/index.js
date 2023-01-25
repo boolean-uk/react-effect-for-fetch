@@ -1,20 +1,10 @@
 import { useEffect, useState } from "react"
+import ArtList from "./components/ArtList"
 
 
 
 function ArtsSection() {
-  const [artworks, setArtWorks] = useState([])
 
-  useEffect(() => {
-
-    fetch(`https://api.artic.edu/api/v1/artworks?limit=20`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.data)
-        setArtWorks(data.data)
-
-      })
-  }, [])
 
   // title = string
   // artist_title = string
@@ -26,22 +16,7 @@ function ArtsSection() {
       <h2>Arts Section</h2>
       <div className="scroll-container">
         <ul className="art-list">
-          {artworks.map((artwork, index) =>  (
-            <li key={index}>
-              <div className="frame">
-                <img src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`} alt={artwork.title} />
-              </div>
-              <h3>{artwork.title}</h3>
-              <p>{artwork.artist_title}</p>
-              <h4>Artistic Subjects</h4>
-              <ul>
-                {artwork.term_titles.map((subject, index) => (
-                  <li key={index}>{subject}</li>
-                ))}
-              </ul>
-            </li>
-          ))}
-
+          <ArtList />
         </ul>
       </div>
     </section>
