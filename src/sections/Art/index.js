@@ -2,20 +2,19 @@ import { useEffect, useState } from "react"
 
 function ArtsSection() {
   const [art, setArt] = useState([])
-  // const [data, setData] = useState(null);
 
   useEffect(() => {
     // if (!art) return;
-    console.log("sending fetch request", art)
+    // console.log("sending fetch request", art)
     fetch(`https://api.artic.edu/api/v1/artworks`)
       .then((res) => res.json())
       .then((data) => {
         setArt(data.data)
-        console.log("data art", data)
+        // console.log("data art", data)
       })
   }, [])
 
-  console.log("art list", { art })
+  // console.log("art list", { art })
   return (
     <section>
       <h2>Arts Section</h2>
