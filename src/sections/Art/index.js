@@ -10,22 +10,40 @@ function ArtsSection() {
     fetch(`https://api.artic.edu/api/v1/artworks`)
       .then((res) => res.json())
       .then((data) => {
-        setArt(data)
+        setArt(data.data)
         console.log("data art", data)
       })
   }, [])
 
-  // console.table({art})
+  console.log("art list", { art })
   return (
     <section>
       <h2>Arts Section</h2>
       <div className="scroll-container">
         <ul className="art-list">
           {
-         art.map((artWork, index) => {
-             <li key={index}>test</li> 
-  
-            })
+            art.map((artWork, index) => (
+              <li key={index}>
+                <div className="frame">
+                  {/* <img src={`https://api.artic.edu/api/v1/artworks/27992?fields=id,${artWork.title},${artWork.image_id}`} alt="dsfwf"/> */}
+
+                  <img src={`https://www.artic.edu/iiif/2/${artWork.image_id}/full/840,/0/default.jpg`} alt="dsfwf"/>
+                </div>
+                <h3>{artWork.title} </h3>
+                {/* if it's empty, then say uinknown #extension */}
+                <p>Artist: {artWork.artist_title}</p>
+                <h4>Artistic Subjects:</h4>
+                <ul>
+                  {/* {artWork.subject_titles.map((subject, index)=>{
+                    <li key={index}>
+                      {subject_titles.subject}
+                    </li>}) 
+                    } */}
+                    <li>figure out later</li>
+                </ul>
+              </li>
+
+            ))
           }
         </ul>
       </div>
