@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ArtList from "./components/ArtList";
 
+
+// TODO: maybe the link to the api will be somehow provided in props
 function ArtsSection(props) {
     const [artData, setArtData] = useState([]);
 
@@ -9,7 +11,7 @@ function ArtsSection(props) {
         const jsonResponse = await response.json();
         setArtData(jsonResponse.data);
     }
-    
+
     useEffect(() => {
         getData();
         console.log("useEffect ran with art data");
