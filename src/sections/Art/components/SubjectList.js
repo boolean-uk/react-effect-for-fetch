@@ -1,4 +1,6 @@
 function SubjectList(props) {
+    // console.log(props.subjects);
+
     return (
         <ul>
             {props.subjects.map((subject, index) => (
