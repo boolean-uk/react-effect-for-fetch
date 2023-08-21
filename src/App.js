@@ -1,11 +1,12 @@
-import AdviceSection from "./sections/Advice"
-import ArtsSection from "./sections/Art"
-import UsersSection from "./sections/Users"
-import "./styles.css"
+import AdviceSection from './sections/Advice'
+import UsersSection from './sections/Users'
+import ArtsSection from './sections/Art'
+import './styles.css'
 
 function App() {
+
   return (
-    <div className="main-layout">
+    <div className="app">
       <ArtsSection />
       <UsersSection />
       <AdviceSection />
@@ -13,4 +14,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
