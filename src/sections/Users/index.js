@@ -1,12 +1,21 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+
+import UsersList from "./components/UsersList";
 
 function UsersSection() {
-  return (
-    <section>
-      <h2>Users Section</h2>
-      <div className="scroll-container"></div>
-    </section>
-  )
+  const [userData, setUserData] = useState({ results: [] });
+
+  async function getUserData() {
+    const response = await fetch("https://randomuser.me/api/?results=5");
+    const json = await response.json();
+    setUserData(json);
+  }
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  return <UsersList userData={userData} />;
 }
 
-export default UsersSection
+export default UsersSection;
