@@ -1,10 +1,21 @@
 import { useEffect, useState } from "react"
+import UsersList from "./components/UsersList"
 
 function UsersSection() {
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=10") //create x-amount
+    .then(response => response.json())
+    .then(data => setUsers(data.results))
+  }, [])
+
   return (
     <section>
       <h2>Users Section</h2>
-      <div className="scroll-container"></div>
+      <div className="scroll-container">
+        <UsersList users={users} />
+      </div>
     </section>
   )
 }
