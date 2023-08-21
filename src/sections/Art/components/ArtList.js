@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import ArtListItem from "./ArtListItem"
 
 function ArtList() {
-    const [data, setData] = useState([])
+    const [art, setArt] = useState([])
 
     async function getArtworks() {
         const response = await fetch(`https://api.artic.edu/api/v1/artworks?fields=id,image_id,title,artist_display,subject_titles`)
@@ -15,7 +15,7 @@ function ArtList() {
             const imgUrl = imgBase+imgId+imgExt
             artwork["imgUrl"] = imgUrl
         })
-        setData([... json.data])
+        setArt([... json.data])
     }
 
     useEffect(() => {
@@ -25,7 +25,7 @@ function ArtList() {
     return (
         <ul className="art-list">
             {
-                data.map(artwork => {
+                art.map(artwork => {
                     return <ArtListItem key={artwork.id} artwork={artwork}/>
                 })
             }
