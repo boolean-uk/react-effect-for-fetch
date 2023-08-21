@@ -22,11 +22,9 @@ function ArtListItem({ artic }) {
                             <h3>{art.title ? art.title : "No title given"}</h3>
                             <p>Artist:
                                 {
-                                    !art.artist_title ?
+                                    !art.artist_title || art.artist_title === "Unknown artist" ?
                                         <strong>"No artist name given"</strong> :
-                                        art.artist_title === "Unknown artist" ?
-                                            <strong>"No artist name given"</strong> :
-                                            art.artist_title
+                                        <strong>{art.artist_title}</strong> 
 
                                 }
                             </p>
