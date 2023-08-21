@@ -1,5 +1,16 @@
+
+
 function UserListItem({ user }) {
-	const backgroundClass = user.gender === "male" ?  "bg-blue" : "bg-pink"
+	let backgroundClass
+
+	if (user.gender === "male")
+	{
+		backgroundClass = "bg-blue"
+	}
+	else
+	{
+		backgroundClass = "bg-pink"
+	}
 
 	return (
 		<li className={backgroundClass}>
