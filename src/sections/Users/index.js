@@ -7,8 +7,8 @@ function UsersSection() {
 
   useEffect(() => {
     async function getUserData() {
-      let response = await fetch("https://randomuser.me/api/?page=3&results=10");
-      let userData = await response.json();
+      const response = await fetch("https://randomuser.me/api/?page=3&results=10");
+      const userData = await response.json();
       console.log(userData)
       setUsers(userData.results);
     }

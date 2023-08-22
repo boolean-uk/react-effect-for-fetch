@@ -8,8 +8,8 @@ function ArtsSection() {
 
   useEffect(() => {
     async function getArtData() {
-      let response = await fetch("https://api.artic.edu/api/v1/artworks");
-      let artData = await response.json();
+      const response = await fetch("https://api.artic.edu/api/v1/artworks");
+      const artData = await response.json();
       setArtic(artData.data);
     }
     getArtData();
