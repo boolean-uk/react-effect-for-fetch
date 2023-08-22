@@ -3,19 +3,19 @@ import { useEffect, useState } from "react"
 function ArtsSection() {
   
   // const [artList, setartList] = useState("");
-  const [data, setData] = useState('');
+  // const [data, setData] = useState('');
 
 
   // Write code here.
-    async function getData() {
-        const response = await fetch("https://api.artic.edu/api/v1/artworks?fields=image_id,title,id,artist_title,subject_titles")
-        const json = await response.json()
-        setData(json)
-    }
+    // async function getData() {
+    //     const response = await fetch("https://api.artic.edu/api/v1/artworks?fields=image_id,title,id,artist_title,subject_titles")
+    //     const json = await response.json()
+    //     setData(json)
+    // }
 
-    useEffect(() => {
-          getData()
-    }, [data])
+    // useEffect(() => {
+    //       getData()
+    // }, [data])
 
   return (
      
@@ -29,9 +29,9 @@ function ArtsSection() {
               src="https://www.artic.edu/iiif/2/4e074d70-4424-331b-ec89-0776a45d6825/full/843,/0/default.jpg"
             /> */}
           </div>
-          <h3>{data.title[0]}Beggar with Oysters (Philosopher)</h3>
+          <h3>Beggar with Oysters (Philosopher)</h3>
            {/* couldn't pass data from the api  */}
-          <p >{data.artist_title}Artist: Édouard Manet</p>
+          <p >Artist: Édouard Manet</p>
           <h4>Artistic Subjects:</h4>
           <ul>
             <li >Century of Progress</li>

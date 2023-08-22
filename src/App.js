@@ -6,9 +6,9 @@ import "./styles.css"
 function App() {
   return (
     <div className="main-layout">
-      <ArtsSection />
+      {/* <ArtsSection /> */}
       <UsersSection />
-      <AdviceSection />
+      {/* <AdviceSection /> */}
     </div>
   )
 }
