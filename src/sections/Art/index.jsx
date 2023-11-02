@@ -13,6 +13,7 @@ function ArtsSection() {
   return (
     <section>
       <h2>Arts Section</h2>
+      <div className="scroll-container">
       <ul className="art-list">
         {art.map(art => (
           <li key={art.id}>
@@ -33,6 +34,7 @@ function ArtsSection() {
           </li>
         ))}
       </ul>
+      </div>
     </section>
   )}
 
