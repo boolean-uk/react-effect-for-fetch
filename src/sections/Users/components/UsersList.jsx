@@ -14,13 +14,16 @@ export default function UsersList() {
       const response = await fetch(`${BASE_URL}?${FIELDS}`);
       const result = await response.json();
       setPeopleData(result.results);
-      setPeopleInfo(result.info)
+      setPeopleInfo(result.info);
     }
     obtainPeopleData();
   }, []);
+  
   return (
-   <ul className="users-list">
-    {peopleData.map((person, index) => <UsersListItem person={person} key={`person-${index}`} />)}
-   </ul>
-  )
+    <ul className="users-list">
+      {peopleData.map((person, index) => (
+        <UsersListItem person={person} key={`person-${index}`} />
+      ))}
+    </ul>
+  );
 }

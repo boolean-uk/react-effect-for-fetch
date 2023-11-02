@@ -56,3 +56,9 @@ img {
 .bg-pink {
   background-color: #f3e5f5;
 }
+
+.advice-exists {
+  background-color: #888;
+  color: #444;
+  border: 2px #bbb solid;
+}
