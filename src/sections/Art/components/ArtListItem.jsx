@@ -1,17 +1,18 @@
 import SubjectList from "./SubjectList";
 
-export default function ArtListItem ({artist, src, title, subjects}) {
-  
+export default function ArtListItem ({artPiece}) {
+  console.log(artPiece)
   return (
     <li>
       <div className="frame">
         <img
-          src={"https://www.artic.edu/iiif/2/4e074d70-4424-331b-ec89-0776a45d6825/full/843,/0/default.jpg"}
+          // src={artPiece.thumbnail}
+          alt={artPiece.thumbnail.alt_text}
         />
       </div>
       {/* TODO: replace */}
-      <h3>{"Some title"}</h3>
-      <p>Artist: {"Some Artist"}</p>
+      <h3>{artPiece.title}</h3>
+      <p>Artist: {"some artis"}</p>
       <h4>Artistic Subjects:</h4>
       <ul>
         {/* TODO: replace */}

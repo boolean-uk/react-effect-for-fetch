@@ -1,11 +1,9 @@
 import ArtListItem from "./ArtListItem";
 
-export default function ArtList () {
+export default function ArtList ({artArr}) {
   return (
     <ul className="art-list">
-      <ArtListItem />
-      <ArtListItem />
-      <ArtListItem />
+      {artArr.map((artPiece, index) => <ArtListItem key={index} artPiece={artPiece}/>)}
     </ul>
   )
 }
