@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import ArtListItem from './components/ArtListItem'
+import ArtList from './components/ArtList'
 
 function ArtsSection() {
 
@@ -19,19 +19,25 @@ function ArtsSection() {
   return (
     <section>
       <h2>Arts Section</h2>
-      <div className="scroll-container">{artData.map((artItem) => {
-        return (
-          <ArtListItem 
-          title={artItem.title}
-          artist_title={artItem.artist_title}
-          image_id={artItem.image_id}
-          />
+      <div className="scroll-container">
+        {artData.map((artItem) => {
+          return (
+            <ArtList 
+              key={artItem.id}
+              title={artItem.title}
+              imageUrl={artItem.image_id}
+              artist={artItem.artist_title}
+              classification={artItem.classification_title}
+              date={artItem.date_display}
+              medium={artItem.medium_display}
+              place={artItem.place_of_origin}
+            />
+          )
+        })}
+        </div>
+        </section>
         )
-      })}
-      </div>
-    </section>
-  )
-}
+        }
 
 export default ArtsSection
 

@@ -1,13 +1,12 @@
-function SubjectList({ subjects }) {
-
-
+function SubjectList({ classification_title, date_display, medium_display, place_of_origin }) {
     return (
         <ul>
-            <li>Century of Progress</li>
-            <li>men</li>
-            <li>portraits</li>
-            <li>world's fairs</li>
-            <li>Chicago World's Fairs</li>
+            <li>{classification_title}</li>
+            <li>{date_display}</li>
+            <li>{medium_display}</li>
+            <li>{place_of_origin}</li>
         </ul>
     );
 }
+
+export default SubjectList;
