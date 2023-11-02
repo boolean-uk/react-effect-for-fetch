@@ -1,8 +1,15 @@
+import UserList from "./components/UsersList.jsx"
+
 function UsersSection() {
+
   return (
     <section>
       <h2>Users Section</h2>
-      <div className="scroll-container"></div>
+      <div className="scroll-container">
+        <ul className="users-list">
+          <UserList />
+        </ul>
+      </div>
     </section>
   )
 }
