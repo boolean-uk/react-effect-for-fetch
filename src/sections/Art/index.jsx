@@ -24,7 +24,7 @@ function ArtsSection() {
     <section>
       <h2>Arts Section</h2>
       <div className="scroll-container">
-        <ArtList></ArtList>
+        <ArtList artData={artData}></ArtList>
       </div>
     </section>
   );
