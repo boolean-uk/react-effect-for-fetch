@@ -24,6 +24,7 @@ function ArtsSection() {
           <ArtListItem 
           title={artItem.title}
           artist_title={artItem.artist_title}
+          image_id={artItem.image_id}
           />
         )
       })}
