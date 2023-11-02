@@ -16,7 +16,7 @@ useEffect(() => {
         // console.log(data.data)
         // console.log(data.config)
         // console.log(data)
-        setArtworks(data)
+        setArtworks(data.data)
       })
   }
 }, [dataType])
@@ -32,23 +32,24 @@ console.log(artworks)
       <h2>Arts Section</h2>
       <div className="scroll-container">
         <ul className="scroll-container">
-        <li>
-        <div className="frame">
-          <img
-            src="https://www.artic.edu/iiif/2/4e074d70-4424-331b-ec89-0776a45d6825/full/843,/0/default.jpg"
-          />
-        </div>
-        <h3>Beggar with Oysters (Philosopher)</h3>
-        <p>Artist: Édouard Manet</p>
-        <h4>Artistic Subjects:</h4>
-        <ul>
-          <li>Century of Progress</li>
-          <li>men</li>
-          <li>portraits</li>
-          <li>world's fairs</li>
-          <li>Chicago World's Fairs</li>
-        </ul>
-      </li>
+      {artworks.map((artwork, index) => 
+       <li key={`${artwork.title}-${index}`}>
+       <div className="frame">
+         <img
+           src="https://www.artic.edu/iiif/2/4e074d70-4424-331b-ec89-0776a45d6825/full/843,/0/default.jpg"
+         />
+       </div>
+       <h3>{artwork.title}</h3>
+       <p>{artwork.artist_title}</p>
+       <h4>Artistic Subjects:</h4>
+       <ul>
+        {artwork.subject_titles.map((subject, index) => 
+        <li key={`${subject}-${index}`}>{subject}</li>
+        )}
+       </ul>
+     </li>
+      )}
+     
         </ul>
       </div>
     </section>
