@@ -15,26 +15,25 @@ function App() {
     fetch(baseURL+endpoint)
       .then(response => response.json())
       .then(data => setArtItems(data.data))
-      .then(() => console.log("loaded art items", artItems))
+      // .then(() => console.log("loaded art items", artItems))
   }
 
   useEffect(searchArt, [])
 
-  const [users, setUsers] = useState(["John", "Jane"])
+  const [users, setUsers] = useState([])
+
   const getUsers = () => {
     const baseURL = "https://randomuser.me/api/"
-    const endpoint = "?results=3"
+    const endpoint = "?results=10&inc=gender,name,email,picture"
     fetch(baseURL + endpoint)
       .then(response => response.json())
       .then(data => setUsers(data.results))
-      .then(data => console.log(data))
       .then(() => console.log("fetched and saved users", users))
   }
 
   useEffect(getUsers, [])
   
   const [advice, setAdvice] = useState([])
-  console.log(artItems.length, artItems[0], artItems)
 
   return (
     <div className="main-layout">
