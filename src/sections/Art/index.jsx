@@ -11,7 +11,7 @@ const [dataType, setDataType] = useState('')
 
 useEffect(() => {
   if (!dataType) {
-    fetch(`${artURL}`)
+    fetch(artURL)
       .then(res => res.json())
       .then(data => setArtworks(data.data))
   }
