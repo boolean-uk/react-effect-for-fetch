@@ -1,22 +1,31 @@
+import { useEffect } from "react"
+import { useState } from "react"
+
 function ArtsSection() {
 
-// function fetchArtData() {
-//   // fetch('https://api.artic.edu/api/v1/artworks?fields=title,artist_title,subject_titles,image_id')
-//   fetch('https://api.artic.edu/api/v1/artworks/27992?fields=id,title,image_id')
-//     .then(res => res.json())
-//     .then(data =>{
-//       console.log(data.data)
-//       console.log(data.config)
-//       console.log(data)
-//     } )
-// }
+const artURL = 'https://api.artic.edu/api/v1/artworks?fields=title,artist_title,subject_titles,image_id'
+
+const [artworks, setArtworks] = useState([])
+const [dataType, setDataType] = useState('')
+
+useEffect(() => {
+  if (!dataType) {
+    fetch(`${artURL}`)
+      .then(res => res.json())
+      .then(data =>{
+        // console.log(data.data)
+        // console.log(data.config)
+        // console.log(data)
+        setArtworks(data)
+      })
+  }
+}, [dataType])
+
+console.log(artworks)
 
 // const imgIIIF = "https://www.artic.edu/iiif/2"
 
-// fetch('https://www.artic.edu/iiif/2/1adf2696-8489-499b-cad2-821d7fde4b33/full/843,/0/default.jpg')
-// .then(res => res.json())
-// .then(data => console.log(data))
-
+// fetch(`${imgIIIF}/4e074d70-4424-331b-ec89-0776a45d6825/full/843,/0/default.jpg`)
 
   return (
     <section>
