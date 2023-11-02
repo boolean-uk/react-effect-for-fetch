@@ -1,4 +1,4 @@
-import RenderUsers from "./components/UsersListItem.jsx"
+import UserList from "./components/UsersList.jsx"
 
 function UsersSection() {
 
@@ -7,7 +7,7 @@ function UsersSection() {
       <h2>Users Section</h2>
       <div className="scroll-container">
         <ul className="users-list">
-          <RenderUsers />
+          <UserList />
         </ul>
       </div>
     </section>
