@@ -2,7 +2,6 @@ import SubjectList from "./SubjectList"
 
 export default function ArtListItem({item, artConfig}) {
   const image = item.image_id? `${artConfig.iiif_url}/${item.image_id}/full/843,/0/default.jpg` : "https://dino-chrome.com/static/images/dino.jpg"
-  console.log('item', item)
   return (
     <li>
     <div className="frame">
