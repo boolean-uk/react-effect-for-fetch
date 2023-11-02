@@ -11,10 +11,7 @@ function AdviceSection() {
     if (!dataType) {
       fetch(adviceURL)
       .then(res => res.json())
-      .then(data => {
-        console.log(data.slip.advice)
-        setAdvice(data.slip.advice)
-      })
+      .then(data => setAdvice(data.slip.advice))
     }
   }, [dataType])
 
@@ -23,6 +20,16 @@ function AdviceSection() {
       .then(res => res.json())
       .then(data => setAdvice(data.slip.advice))
   }
+
+  const [faveAdvice, setFaveAdvice] = useState([])
+
+  function saveToFavourites() {
+    if (!faveAdvice.includes(advice)) {
+      setFaveAdvice([...faveAdvice, advice])
+    }
+    console.log(faveAdvice)
+  }
+
  
   return (
     <section>
@@ -31,14 +38,14 @@ function AdviceSection() {
         <h3>Some Advice</h3>
         <p>{advice}</p>
         <button onClick={getMoreAdvice}>Get More Advice</button>
-        <button>Save to Favourties</button>
+        <button onClick={saveToFavourites}>Save to Favourties</button>
       </section>
       <section className="favourtite-slips-list">
         <h3>Favourite Advice Slips</h3>
         <ul>
-          <li>Measure twice, cut once.</li>
-          <li>Don't let the bastards grind you down.</li>
-          <li>Always the burrito.</li>
+          {faveAdvice.map((someAdvice, index) =>
+            <li key={`${someAdvice}-${index}`}>{someAdvice}</li>
+          )}
         </ul>
       </section>
     </section>
