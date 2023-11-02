@@ -16,7 +16,6 @@ useEffect(() => {
       .then(res => res.json())
       .then(data => {
         setArtworks(data.data)
-        console.log(data.data)
       })
   }
 }, [dataType])
