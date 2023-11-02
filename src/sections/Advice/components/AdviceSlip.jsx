@@ -14,7 +14,7 @@ function AdviceSlip({ advice, adviceURL, setAdvice, faveAdvice, setFaveAdvice })
   }
 
     return (
-        <section className="adivce-slip">
+        <section className="advice-slip">
             <h3>Some Advice</h3>
             <p>{advice}</p>
             <button onClick={getMoreAdvice}>Get More Advice</button>
