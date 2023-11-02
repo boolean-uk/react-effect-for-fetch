@@ -7,15 +7,12 @@ function ArtsSection() {
 const artURL = 'https://api.artic.edu/api/v1/artworks?fields=title,artist_title,subject_titles,image_id'
 
 const [artworks, setArtworks] = useState([])
-const [dataType, setDataType] = useState('')
 
 useEffect(() => {
-  if (!dataType) {
     fetch(artURL)
       .then(res => res.json())
       .then(data => setArtworks(data.data))
-  }
-}, [dataType])
+}, [])
 
   return (
     <section>

@@ -7,15 +7,12 @@ function UsersSection() {
   const userURL = 'https://randomuser.me/api/?inc=name,gender,email,picture&results=10'
 
   const [users, setUsers] = useState([])
-  const [dataType, setDataType] = useState('')
 
   useEffect(() => {
-    if (!dataType) {
       fetch(userURL)
         .then(res => res.json())
         .then(data => setUsers(data.results))
-    }
-  }, [dataType])
+  }, [])
 
   return (
     <section>

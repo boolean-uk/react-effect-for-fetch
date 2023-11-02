@@ -8,17 +8,13 @@ function AdviceSection() {
   const adviceURL = 'https://api.adviceslip.com/advice'
 
   const [advice, setAdvice] = useState([])
-  const [dataType, setDataType] = useState('')
+  const [faveAdvice, setFaveAdvice] = useState([])
 
   useEffect(() => {
-    if (!dataType) {
       fetch(adviceURL)
       .then(res => res.json())
       .then(data => setAdvice(data.slip.advice))
-    }
-  }, [dataType])
-
-  const [faveAdvice, setFaveAdvice] = useState([])
+  }, [])
  
   return (
     <section>
