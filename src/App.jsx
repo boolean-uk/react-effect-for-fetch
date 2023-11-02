@@ -1,7 +1,11 @@
-import AdviceSection from './sections/Advice'
-import ArtsSection from './sections/Art'
-import UsersSection from './sections/Users'
-import './App.css'
+import AdviceSection from "./sections/Advice";
+import ArtsSection from "./sections/Art";
+import UsersSection from "./sections/Users";
+import "./App.css";
+
+// Import the ART SECTIONS
+
+//The aim of the exercise is to practice fetching data and rendering lists.
 
 function App() {
   return (
@@ -10,7 +14,7 @@ function App() {
       <UsersSection />
       <AdviceSection />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
