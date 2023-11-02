@@ -8,20 +8,29 @@ function AdviceSection() {
   const [dataType, setDataType] = useState('')
 
   useEffect(() => {
-    fetch(adviceURL)
+    if (!dataType) {
+      fetch(adviceURL)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        console.log(data.slip.advice)
+        setAdvice(data.slip.advice)
       })
-  })
+    }
+  }, [dataType])
+
+  function getMoreAdvice() {
+    fetch(adviceURL)
+      .then(res => res.json())
+      .then(data => setAdvice(data.slip.advice))
+  }
  
   return (
     <section>
       <h2>Advice Section</h2>
       <section className="adivce-slip">
         <h3>Some Advice</h3>
-        <p>Always the burrito.</p>
-        <button>Get More Advice</button>
+        <p>{advice}</p>
+        <button onClick={getMoreAdvice}>Get More Advice</button>
         <button>Save to Favourties</button>
       </section>
       <section className="favourtite-slips-list">
