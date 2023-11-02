@@ -1,4 +1,23 @@
+import { useEffect, useState } from "react"
+
 function UsersSection() {
+
+  const userURL = 'https://randomuser.me/api/?results=10'
+
+  const [user, setUser] = useState([])
+  const [dataType, setDataType] = useState('')
+
+  useEffect(() => {
+    if (!dataType) {
+      fetch(userURL)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data.results)
+          setUser(data.results)
+        })
+    }
+  }, [dataType])
+
   return (
     <section>
       <h2>Users Section</h2>

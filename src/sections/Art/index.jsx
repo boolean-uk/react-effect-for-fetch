@@ -1,5 +1,4 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import ArtList from "./components/ArtList"
 
@@ -14,9 +13,7 @@ useEffect(() => {
   if (!dataType) {
     fetch(`${artURL}`)
       .then(res => res.json())
-      .then(data => {
-        setArtworks(data.data)
-      })
+      .then(data => setArtworks(data.data))
   }
 }, [dataType])
 
