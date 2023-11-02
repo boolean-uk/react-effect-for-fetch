@@ -1,15 +1,14 @@
 import SubjectList from "./SubjectList";
 
 export default function ArtListItem({ art, config }) {
+    const filteredArt = art?.filter((piece) => piece.image_id);
     return (
         <>
-        {art?.map((piece, idx) =>
+        {filteredArt?.map((piece, idx) =>
         <li key={idx}>
          <div className="frame">
              <img 
-             src={piece.image_id ? `${config.iiif_url}/${piece.image_id}/full/843,/0/default.jpg` 
-             : "https://static.thenounproject.com/png/3674270-200.png"
-            }
+             src={`${config.iiif_url}/${piece.image_id}/full/843,/0/default.jpg`}
              />
              </div>
          <h3>{piece.title}</h3>
