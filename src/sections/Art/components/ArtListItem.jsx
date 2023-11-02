@@ -1,3 +1,5 @@
+import SubjectList from "./SubjectList"
+
 function ArtListItem({ artwork }) {
 
     const imgIIIF = "https://www.artic.edu/iiif/2"
@@ -13,11 +15,7 @@ function ArtListItem({ artwork }) {
         <h3>{artwork.title}</h3>
         <p>{artwork.artist_title}</p>
         <h4>Artistic Subjects:</h4>
-        <ul>
-          {artwork.subject_titles.map((subject, index) => 
-          <li key={`${subject}-${index}`}>{subject}</li>
-          )}
-        </ul>
+        <SubjectList artwork={artwork} />
       </li>
     )
 }
