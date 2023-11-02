@@ -10,7 +10,6 @@ function AdviceSlip({ advice, adviceURL, setAdvice, faveAdvice, setFaveAdvice })
     if (!faveAdvice.includes(advice)) {
       setFaveAdvice([...faveAdvice, advice])
     }
-    console.log(faveAdvice)
   }
 
     return (
