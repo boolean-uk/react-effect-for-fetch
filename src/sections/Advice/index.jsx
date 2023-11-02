@@ -5,7 +5,7 @@ import FavouriteSlipList from "./components/FavouriteSlipsList"
 
 function AdviceSection() {
   const [adviceSlip, setAdviceSlip] = useState('')
-  const [favouriteSlipList, setfavouriteSlipList] = useState([])
+  const [favouriteSlipList, setFavouriteSlipList] = useState([])
   
 
   const fetchPieceOfAdvice = () => {
@@ -14,7 +14,18 @@ function AdviceSection() {
     .then(data => setAdviceSlip(data.slip))
   }
 
+  const saveToFavourites = () => {
+    const addedFavourite = adviceSlip.advice
+    if(favouriteSlipList.includes(addedFavourite)){
+      return
+    } else (
+    setFavouriteSlipList([...favouriteSlipList, addedFavourite])
+    )
+  }
+
   useEffect(fetchPieceOfAdvice, [])
+
+  console.log(favouriteSlipList)
 
   return (
     <section>
@@ -22,11 +33,11 @@ function AdviceSection() {
       <section className="adivce-slip">
         <h3>Some Advice</h3>
         <AdviceSlip adviceSlip={adviceSlip}/>
-        <button onClick={event => fetchPieceOfAdvice()}>Get More Advice</button>
-        <button>Save to Favourties</button>
+        <button onClick={fetchPieceOfAdvice}>Get More Advice</button>
+        <button onClick={saveToFavourites}>Save to Favourties</button>
       </section>
       <section className="favourtite-slips-list">
-        <FavouriteSlipList/>
+        <FavouriteSlipList favouriteSlipList={favouriteSlipList}/>
       </section>
     </section>
   )
