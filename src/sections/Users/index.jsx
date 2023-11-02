@@ -16,7 +16,7 @@ function UsersSection() {
 
 
   const user = users.map((user, index) => (
-    <li key={index} className="bg-blue">
+    <li key={index} className={`${user.gender}`}>
       <img
         src= {`${user.picture.large}`}
         alt="Ritthy Ryan"
