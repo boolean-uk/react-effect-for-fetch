@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 
+import AdviceSlip from "./components/AdviceSlip"
+
 function AdviceSection() {
 
   const adviceURL = 'https://api.adviceslip.com/advice'
@@ -15,31 +17,12 @@ function AdviceSection() {
     }
   }, [dataType])
 
-  function getMoreAdvice() {
-    fetch(adviceURL)
-      .then(res => res.json())
-      .then(data => setAdvice(data.slip.advice))
-  }
-
   const [faveAdvice, setFaveAdvice] = useState([])
-
-  function saveToFavourites() {
-    if (!faveAdvice.includes(advice)) {
-      setFaveAdvice([...faveAdvice, advice])
-    }
-    console.log(faveAdvice)
-  }
-
  
   return (
     <section>
       <h2>Advice Section</h2>
-      <section className="adivce-slip">
-        <h3>Some Advice</h3>
-        <p>{advice}</p>
-        <button onClick={getMoreAdvice}>Get More Advice</button>
-        <button onClick={saveToFavourites}>Save to Favourties</button>
-      </section>
+      <AdviceSlip advice={advice} adviceURL={adviceURL} setAdvice={setAdvice} faveAdvice={faveAdvice} setFaveAdvice={setFaveAdvice} />
       <section className="favourtite-slips-list">
         <h3>Favourite Advice Slips</h3>
         <ul>
