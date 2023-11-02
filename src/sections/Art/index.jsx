@@ -12,44 +12,38 @@ useEffect(() => {
   if (!dataType) {
     fetch(`${artURL}`)
       .then(res => res.json())
-      .then(data =>{
-        // console.log(data.data)
-        // console.log(data.config)
-        // console.log(data)
+      .then(data => {
         setArtworks(data.data)
+        console.log(data.data)
       })
   }
 }, [dataType])
 
-console.log(artworks)
-
-// const imgIIIF = "https://www.artic.edu/iiif/2"
-
-// fetch(`${imgIIIF}/4e074d70-4424-331b-ec89-0776a45d6825/full/843,/0/default.jpg`)
+const imgIIIF = "https://www.artic.edu/iiif/2"
+const imgURLEnd = "/full/843,/0/default.jpg"
 
   return (
     <section>
       <h2>Arts Section</h2>
       <div className="scroll-container">
         <ul className="scroll-container">
-      {artworks.map((artwork, index) => 
-       <li key={`${artwork.title}-${index}`}>
-       <div className="frame">
-         <img
-           src="https://www.artic.edu/iiif/2/4e074d70-4424-331b-ec89-0776a45d6825/full/843,/0/default.jpg"
-         />
-       </div>
-       <h3>{artwork.title}</h3>
-       <p>{artwork.artist_title}</p>
-       <h4>Artistic Subjects:</h4>
-       <ul>
-        {artwork.subject_titles.map((subject, index) => 
-        <li key={`${subject}-${index}`}>{subject}</li>
-        )}
-       </ul>
-     </li>
-      )}
-     
+          {artworks.map((artwork, index) => 
+            <li key={`${artwork.title}-${index}`}>
+              <div className="frame">
+                <img
+                  src={`${imgIIIF}/${artwork.image_id}${imgURLEnd}`}
+                />
+              </div>
+              <h3>{artwork.title}</h3>
+              <p>{artwork.artist_title}</p>
+              <h4>Artistic Subjects:</h4>
+              <ul>
+                {artwork.subject_titles.map((subject, index) => 
+                <li key={`${subject}-${index}`}>{subject}</li>
+                )}
+              </ul>
+            </li>
+          )}
         </ul>
       </div>
     </section>
