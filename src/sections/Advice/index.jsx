@@ -1,4 +1,20 @@
+import { useEffect, useState } from "react"
+
 function AdviceSection() {
+
+  const adviceURL = 'https://api.adviceslip.com/advice'
+
+  const [advice, setAdvice] = useState([])
+  const [dataType, setDataType] = useState('')
+
+  useEffect(() => {
+    fetch(adviceURL)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+  })
+ 
   return (
     <section>
       <h2>Advice Section</h2>
