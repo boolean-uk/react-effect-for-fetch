@@ -1,3 +1,5 @@
+
+
 function ArtsSection() {
   return (
     <section>
