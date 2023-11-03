@@ -12,7 +12,7 @@ useEffect(() => {
   .then(res => res.json())
   .then(data => {
     setArtsData(data.data)
-    console.log(data)
+    // console.log(data.data.subject_titles)
   }) 
 }, [])
 
@@ -30,9 +30,7 @@ useEffect(() => {
               <h3>{artData.title}</h3>
               <p>Artist: {artData.artist_title}</p>
               <h4>Artist Subjects:</h4>
-              <ul>
                 <Subjects artData={artData} />
-              </ul>
             </li>
           ))}
         </ul>

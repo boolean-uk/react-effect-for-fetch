@@ -1,9 +1,9 @@
 export default function Subjects({artData}){
     return (
         <ul>
-            {artData.subject_titles.map((subject, key) => {
-                <li key={key}>{subject}</li>
-            })}
+            {artData.term_titles.map((term, key) => (
+                <li key={key}>{term}</li>
+            ))}
         </ul>
     )
 }
