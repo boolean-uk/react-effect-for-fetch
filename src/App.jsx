@@ -28,19 +28,29 @@ function App() {
     fetch(baseURL + endpoint)
       .then(response => response.json())
       .then(data => setUsers(data.results))
-      .then(() => console.log("fetched and saved users", users))
   }
 
   useEffect(getUsers, [])
   
   const [advice, setAdvice] = useState([])
+  
+  const getAdvice = () => {
+    const baseURL = "https://api.adviceslip.com/"
+    const endpoint = "advice"
+    fetch(baseURL + endpoint)
+      .then(response => response.json())
+      .then(data => setAdvice(data.slip))
+      .then(() => console.log("fetched advice", advice))
+  }
+
+  useEffect(getAdvice, [])
 
   return (
     <div className="main-layout">
       <>
         <ArtsSection artArr={artItems}/>
         <UsersSection userArr={users} />
-        <AdviceSection />
+        <AdviceSection advice={advice} getAdvice={getAdvice}/>
       </>
     </div>
   )
