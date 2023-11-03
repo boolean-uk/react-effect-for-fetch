@@ -3,7 +3,6 @@ import ArtsSection from './sections/Art'
 import UsersSection from './sections/Users'
 import './App.css'
 import { useEffect, useState } from 'react'
-import ArtList from './sections/Art/components/ArtList'
 
 function App() {
 
@@ -15,7 +14,6 @@ function App() {
     fetch(baseURL+endpoint)
       .then(response => response.json())
       .then(data => setArtItems(data.data))
-      // .then(() => console.log("loaded art items", artItems))
   }
 
   useEffect(searchArt, [])
@@ -40,7 +38,6 @@ function App() {
     fetch(baseURL + endpoint)
       .then(response => response.json())
       .then(data => setAdvice(data.slip))
-      .then(() => console.log("fetched advice", advice))
   }
 
   useEffect(getAdvice, [])
