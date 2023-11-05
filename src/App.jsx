@@ -9,6 +9,8 @@ function App() {
   const [artSection, setArtSection] = useState([])
 
 
+
+  // fucnrion to make a fetch request for the userSection
   useEffect(() => {
       fetch('https://randomuser.me/api/?results=10') 
         .then((response)=> response.json())
@@ -18,8 +20,10 @@ function App() {
         })
   }, [])
 
+
+// fucntion to make a fetch requet and get the data for hte art Worker, then set it to the artwork state we craeted at the top 
   useEffect(() => {
-    fetch('https://api.artic.edu/api/v1/artworks?limit=100') 
+    fetch('https://api.artic.edu/api/v1/artworks?limit=10') 
      .then((response)=> response.json())
      .then((data) => {
       setArtSection(data.data)
@@ -29,6 +33,7 @@ function App() {
 
 
 
+  // thingd to render on our page 
   return (
     <div className="main-layout">
       <ArtsSection artSection={artSection} />
