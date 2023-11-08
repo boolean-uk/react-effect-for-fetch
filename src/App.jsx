@@ -1,16 +1,16 @@
-import AdviceSection from './sections/Advice'
-import ArtsSection from './sections/Art'
-import UsersSection from './sections/Users'
-import './App.css'
+import SecAdvice from "./sections/Advice";
+import SecArts from "./sections/Art";
+import SecUser from "./sections/Users";
+import "./App.css";
 
 function App() {
   return (
     <div className="main-layout">
-      <ArtsSection />
-      <UsersSection />
-      <AdviceSection />
+      <SecArts />
+      <SecUser />
+      <SecAdvice />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
