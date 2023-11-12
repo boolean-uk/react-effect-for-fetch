@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-function AdviceSlip() {
+function AdviceSection() {
   
   return (
     <div>
@@ -10,4 +10,4 @@ function AdviceSlip() {
   );
 }
 
-export default AdviceSlip;
+export default AdviceSection;
