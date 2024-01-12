@@ -1,19 +1,22 @@
-
-
 const PublicationHistoryList = ({ publicationHistory }) => {
-  return (
-    <div>
-      <h3>Publication History</h3>
-      {publicationHistory ? (
+  if (publicationHistory && publicationHistory.length > 0) {
+    return (
+      <>
+        <h3>Publication History</h3>
         <ul>
           {publicationHistory.map((historyItem, index) => (
-            <li key={index}>{historyItem}</li>
+            <li key={`History-item-${index}`}>{historyItem}</li>
           ))}
         </ul>
-      ) : (
-        <p>No publication history available.</p>
-      )}
-    </div>
+      </>
+    );
+  }
+
+  // Handle case where publicationHistory is empty
+  return (
+    <>
+      <h3>No Publication History Available</h3>
+    </>
   );
 };
 

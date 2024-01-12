@@ -9,7 +9,7 @@ function ArtList({ artworks }) {
         title={art.title}
         artist={art.artist_title}
         imageUrl={art.image_url}
-        subjects={art.subjects}
+        publicationHistory={art.publicationHistory}
     /> 
       ))}
     </div>
