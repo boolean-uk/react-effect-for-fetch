@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import FavouriteSlipsList from "./components/FavouriteSlipsList";
+
 function AdviceSection() {
   const [advice, setAdvice] = useState("");
   const [loading, setLoading] = useState(true);
@@ -29,7 +31,16 @@ function AdviceSection() {
 
   const handleAddToFavorites = () => {
     if (advice.trim() !== "") {
+      //This condition checks if the trimmed advice is not an empty string.
+      //If the advice is not empty, it proceeds to the next step.
       setFavorites((prevFavorites) => [...prevFavorites, advice]);
+      //This line updates the favorites state by adding the current advice to the list of
+      //favorites. It uses the functional form of setFavorites to ensure that the update is
+      //based on the previous state (prevFavorites). It creates a new array
+      //([...prevFavorites, advice]) by spreading the elements of prevFavorites
+      //and appending the advice to it.
+      //(prevFavorites): This parameter represents the previous state of the
+      //favorites array.
     }
   };
 
@@ -42,14 +53,7 @@ function AdviceSection() {
         <button onClick={handleGetAdvice}>Get More Advice</button>
         <button onClick={handleAddToFavorites}>Save to Favourites</button>
       </section>
-      <section className="favourtite-slips-list">
-        <h3>Favourite Advice Slips</h3>
-        <ul>
-          {favorites.map((favorite, index) => (
-            <li key={index}>{favorite}</li>
-          ))}
-        </ul>
-      </section>
+      <FavouriteSlipsList favorites={favorites} />
     </section>
   );
 }
