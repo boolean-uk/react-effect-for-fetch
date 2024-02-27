@@ -7,9 +7,9 @@ import "./App.css";
 function App() {
   const [artData, setArtData] = useState(null);
   const [userData, setUserData] = useState(null);
+  const [advice, setAdvice] = useState(null);
 
-  console.log({ artData });
-  console.log({ userData });
+  console.log({ advice });
 
   useEffect(() => {
     console.log(
@@ -19,24 +19,37 @@ function App() {
     fetch(`https://boolean-api-server.fly.dev/art`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("received data:", data);
-        console.log("setting new state....");
         setArtData(data);
       });
     fetch(`https://boolean-api-server.fly.dev/JacobChenJensen/contact`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("received data:", data);
-        console.log("setting new state....");
         setUserData(data);
       });
+    fetch(`https://api.adviceslip.com/advice`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("received data:", data);
+        console.log("setting new state....");
+        setAdvice(data);
+      });
   }, []);
+
+  const fetchNewAdvice = () => {
+    fetch(`https://api.adviceslip.com/advice`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("received data:", data);
+        console.log("setting new state....");
+        setAdvice(data);
+      });
+  };
 
   return (
     <div className="main-layout">
       <ArtsSection artData={artData} />
       <UsersSection userData={userData} />
-      <AdviceSection />
+      <AdviceSection advice={advice} fetchNewAdvice={fetchNewAdvice} />
     </div>
   );
 }
