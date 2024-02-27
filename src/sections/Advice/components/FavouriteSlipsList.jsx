@@ -1,14 +1,19 @@
+import PropTypes from "prop-types";
 
-export default function FavouriteSlipList()
+export default function FavouriteSlipList({advice})
 {
     return (
         <>
-        <h3>Favourite Advice Slips</h3>
         <ul>
-          <li>Measure twice, cut once.</li>
-          <li>Don't let the bastards grind you down.</li>
-          <li>Always the burrito.</li>
+        <h3>Favourite Advice Slips</h3>
+        {advice.map((ad, index) => (
+        <li key={index}>{ad}</li>  
+        ))}
         </ul>
         </>
     )
 }
+
+FavouriteSlipList.propTypes = {
+  advice: PropTypes.array
+};
