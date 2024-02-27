@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import AdviceSlip from "./components/AdviceSlip"
+import FavouriteSlipsList from "./components/FavouriteSlipsList"
 
 const URL = "https://api.adviceslip.com/advice"
 function AdviceSection() {
@@ -21,22 +23,8 @@ function AdviceSection() {
   return (
     <section>
       <h2>Advice Section</h2>
-      <section className="adivce-slip">
-        <h3>Some Advice</h3>
-        {(advice.length !== 0) && <p>{advice.slip.advice}</p>}
-        <button onClick={getAdvice}>Get More Advice</button>
-        <button onClick={addToFavourites} disabled={advice.length === 0}>Save to Favourites</button>
-      </section>
-      <section className="favourtite-slips-list">
-        <h3>Favourite Advice Slips</h3>
-        <ul>
-          {favourites.map((item, index) =>{
-            return(
-              <li>{item.slip.advice}</li>
-            )
-          })}
-        </ul>
-      </section>
+      <AdviceSlip advice={advice} getAdvice={getAdvice} addToFavourites={addToFavourites}/>
+      <FavouriteSlipsList favourites={favourites}/>
     </section>
   )
 }
