@@ -29,8 +29,6 @@ function App() {
     fetch(`https://api.adviceslip.com/advice`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("received data:", data);
-        console.log("setting new state....");
         setAdvice(data);
       });
   }, []);
@@ -39,8 +37,6 @@ function App() {
     fetch(`https://api.adviceslip.com/advice`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("received data:", data);
-        console.log("setting new state....");
         setAdvice(data);
       });
   };
