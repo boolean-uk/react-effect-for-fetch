@@ -9,7 +9,7 @@ function AdviceSection() {
   let url = "https://api.adviceslip.com/advice";
 
   function newAdvice(){
-    fetch("https://api.adviceslip.com/advice")
+    fetch(url)
     .then((res) => res.json())
     .then(setCurrentAdvice);
   }
