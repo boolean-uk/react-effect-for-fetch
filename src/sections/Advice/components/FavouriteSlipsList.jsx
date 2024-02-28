@@ -3,7 +3,7 @@ export default function FavouriteSlipsList({ favs }) {
       <ul>
         {favs.map((fav, index) => (
           <li key={index}>
-            <p>{fav}</p>
+            <p className="favourit_p">{fav}</p>
           </li>
         ))}
       </ul>
