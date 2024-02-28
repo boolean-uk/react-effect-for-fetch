@@ -9,11 +9,9 @@ function AdviceSection() {
   const [favouriteSlips, setFavouriteSlips] = useState([]);
 
   useEffect(() => {
-    console.log('Fetching advice')
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setAdviceSlip(data);
       });
   }, [shouldFetch]);
