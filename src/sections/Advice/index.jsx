@@ -1,11 +1,15 @@
+import { useState, props, useEffect } from "react";
+import AdviceSlip from "./components/AdviceSlip";
+import FavouriteSlipsList from "./components/FavouriteSlipsList";
+
 function AdviceSection() {
+  const [savedAdvice, setSavedAdvice] = useState([]);
   return (
     <section>
-      <h2>Advice Section</h2>
-      <section className="adivce-slip"></section>
-      <section className="favourtite-slips-list"></section>
+      <AdviceSlip savedAdvice={savedAdvice} setSavedAdvice={setSavedAdvice}/>
+      <FavouriteSlipsList savedAdvice={savedAdvice}/>
     </section>
-  )
+  );
 }
 
-export default AdviceSection
+export default AdviceSection;
