@@ -4,10 +4,11 @@ import UsersSection from './sections/Users'
 import './App.css'
 
 function App() {
+  const baseUrl = "https://boolean-api-server.fly.dev/"
   return (
     <div className="main-layout">
-      <ArtsSection />
-      <UsersSection />
+      <ArtsSection baseUrl={baseUrl}/>
+      <UsersSection baseUrl={baseUrl}/>
       <AdviceSection />
     </div>
   )
