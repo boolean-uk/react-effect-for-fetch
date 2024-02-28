@@ -1,13 +1,17 @@
-function ArtListItem({ artResData, URL }) {
+export default function ArtListItem({ art }) {
     return (
-      <>
+      <li>
         <div className="frame">
-          <img src={URL + artResData.imageURL} alt={artResData.title}></img>
+          <img src={"https://boolean-api-server.fly.dev" + art.imageURL} />
         </div>
-        <h3>{artResData.title}</h3>
-        <p>Artist: {artResData.artist}</p>
-      </>
+        <h3>{art.title}</h3>
+        <p>Artist: {art.artist}</p>
+        <h4>Publication History:</h4>
+        <ul>
+          {art.publicationHistory.map((publication, index) => (
+            <li key={index}>{publication}</li>
+          ))}
+        </ul>
+      </li>
     );
   }
-  
-  export default ArtListItem;

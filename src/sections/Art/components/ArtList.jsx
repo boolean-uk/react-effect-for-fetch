@@ -1,28 +1,11 @@
-import PublicationHistory from "./PublicationHistoryList";
 import ArtListItem from "./ArtListItem";
 
-function ArtList({ artData, URL }) {
-  console.log("Inside ArtList: ", artData);
+export default function ArtList({ arts }) {
   return (
     <ul className="art-list">
-      {artData.map((artResData) => (
-        <li key={artResData.id}>
-          <ArtListItem artResData={artResData} URL={URL} />
-
-          <h4>Publication History:</h4>
-          <ul>
-            {artResData.publicationHistory.map((publication, index) => (
-              <PublicationHistory
-                key={index}
-                index={index}
-                publication={publication}
-              />
-            ))}
-          </ul>
-        </li>
-      ))}
+      {arts &&
+        arts.length > 0 &&
+        arts.map((art) => <ArtListItem key={art.id} art={art} />)}
     </ul>
   );
 }
-
-export default ArtList;

@@ -1,35 +1,27 @@
 import { useEffect, useState } from "react";
-
 import ArtList from "./components/ArtList";
 
 function ArtsSection() {
-  const [artData, setArtData] = useState([]);
-
-  const URL = `https://boolean-api-server.fly.dev/`;
+  const [arts, setArts] = useState([]);
 
   useEffect(() => {
-    console.log("Running art useEffect");
-    const fetchData = async () => {
-      try {
-        const req = await fetch(URL + "art");
-        const res = await req.json();
-        setArtData(res);
-      } catch (er) {
-        console.log("OBS! Something happened: ", er);
-      }
+    const fetchArts = async () => {
+      const response = await fetch("https://boolean-api-server.fly.dev/art");
+      const json = await response.json();
+      setArts(json);
     };
-    fetchData();
-  }, [URL]);
+    fetchArts();
+  }, []);
 
   return (
     <section>
       <h2>Arts Section</h2>
       <div className="scroll-container">
-        {/* Componenet */}
-        <ArtList artData={artData} URL={URL}></ArtList>
+        <ArtList arts={arts} />
       </div>
     </section>
   )
+
 }
 
 export default ArtsSection
