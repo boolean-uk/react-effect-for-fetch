@@ -14,10 +14,10 @@ function AdviceSection() {
   return (
     <section>
       <h2>Advice Section</h2>
-      <section className="adivce-slip">
+      <section >
         <AdviceSlip saveAdvice={addToFavorite} />
       </section>
-      <section className="favourtite-slips-list">
+      <section >
         <FavouriteSlipsList favs={favAdvices} />
       </section>
     </section>
