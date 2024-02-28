@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchData } from "/src/fetch";
+import { fetchData } from "/src/Utils/fetch";
 import { AdviceSlip } from "./components/AdviceSlip"
 import { FavouriteSlipsList } from "./components/FavouriteSlipsList"
 
