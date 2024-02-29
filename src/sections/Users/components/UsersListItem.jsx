@@ -1,6 +1,6 @@
 function UsersListItem({user}) {
     return (
-      <li key={user}>
+      <li key={user} style={{background: user.favouriteColour}}>
       <img
       src={user.profileImage}
       alt={user.firstName + user.lastName}
