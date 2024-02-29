@@ -1,11 +1,16 @@
-function AdviceSection() {
+import { useState } from "react";
+import AdviceSlipComponent from "./components/AdviceSlip";
+import FavouriteSlipsListComponent from "./components/FavouriteSlipsList";
+
+export default function AdviceSection() {
+  const [favourites, setFavourites] = useState([])
+
   return (
     <section>
       <h2>Advice Section</h2>
-      <section className="adivce-slip"></section>
-      <section className="favourtite-slips-list"></section>
+      <AdviceSlipComponent favourites={favourites} setFavourites={setFavourites} />
+      <FavouriteSlipsListComponent favourites={favourites} />
     </section>
   )
 }
 
-export default AdviceSection
