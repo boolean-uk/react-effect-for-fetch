@@ -1,12 +1,12 @@
-/* Your existing CSS styles */
-body {
-  margin: 0;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: #f2f2f2; /* Light Gray */
-}
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #f2f2f2;
 }
 
 ul[class] {
@@ -21,6 +21,7 @@ ul[class] {
   gap: 20px;
   padding: 20px;
 }
+
 /* Custom scrollbar styles */
 .scroll-container::-webkit-scrollbar {
   width: 10px;
@@ -31,12 +32,12 @@ ul[class] {
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-  background: #29228c; /* Gray */
+  background: #29228c; 
   border-radius: 5px;
 }
 
 .scroll-container::-webkit-scrollbar-thumb:hover {
-  background: #00c83c; /* Green */
+  background: #4439e3;
 }
 
 .scroll-container {
@@ -72,7 +73,7 @@ img {
 .art-list h3 {
   font-size: 1.5rem;
   margin-top: 10px;
-  color: #333; /* Dark Gray */
+  color: #333;
 }
 
 .art-list ul {
@@ -95,7 +96,7 @@ img {
 .users-list h3 {
   font-size: 1.3rem;
   margin-top: 10px;
-  color: #333; /* Dark Gray */
+  color: #333;
 }
 
 /* Hover Effects */
@@ -103,5 +104,70 @@ img {
 .users-list > li:hover {
   background-image: linear-gradient(45deg, #ffffff 0%, #f2f2f2 100%);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05); /* Scale up on hover */
+  transform: scale(1.05);
+  transition: 0.4s ease;
+}
+
+
+.advice-section {
+  background-image: linear-gradient(to bottom, #66ccff, #3399ff); /* Example gradient colors */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.advice-slip {
+  background-color: #fff; 
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.advice-slip h3 {
+  font-size: 1.5rem;
+  color: #333; 
+}
+
+.advice-slip p {
+  margin-bottom: 10px;
+  color: #666; 
+}
+
+.advice-slip button {
+  padding: 10px 20px;
+  margin-left: 0.75rem;
+  background-color: #66ccff;
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.advice-slip button:hover {
+  background-color: #3399ff;
+}
+
+.favourite-slips-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favourite-slips-list h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.favourite-slips-list ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.favourite-slips-list li {
+  margin-bottom: 5px;
+  color: #666;
 }
