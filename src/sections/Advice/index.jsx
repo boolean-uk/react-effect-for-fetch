@@ -7,9 +7,7 @@ function AdviceSection() {
   const [favouriteAdvice, setFavouriteAdvice] = useState([])
 
   const addToFavouriteAdvice = async (id) => {
-    await fetch(`https://api.adviceslip.com/advice/${id}`, {
-      cache: "no-cache"
-    })
+    await fetch(`https://api.adviceslip.com/advice/${id}`)
       .then((res) => res.json())
       .then((res) => setFavouriteAdvice([...favouriteAdvice, res.slip]))
   }
