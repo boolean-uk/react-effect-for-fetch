@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ArtList from "./components/ArtList";
 
 const ApiRequest = {
@@ -11,19 +11,18 @@ const ApiRequest = {
 function ArtsSection() {
     const [artData, setArtData] = useState([]);
 
-    const getData = useCallback(async () => {
+    const getData = async () => {
         const response = await fetch(
             "https://boolean-api-server.fly.dev/art",
             ApiRequest
         );
         const data = await response.json();
-        console.log(data);
         setArtData([...data]);
-    }, [setArtData]);
+    };
 
     useEffect(() => {
         getData();
-    }, [getData]);
+    }, []);
 
     return (
         <section>

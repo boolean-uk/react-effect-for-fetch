@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import UsersList from "./components/UsersList";
 
 //https://boolean-api-server.fly.dev/YOUR_GITHUB_USERNAME/contact
@@ -13,18 +13,18 @@ const ApiRequest = {
 function UsersSection() {
     const [userData, setUserData] = useState([]);
 
-    const getData = useCallback(async () => {
+    const getData = async () => {
         const response = await fetch(
             "https://boolean-api-server.fly.dev/YOUR_GITHUB_USERNAME/contact",
             ApiRequest
         );
         const data = await response.json();
         setUserData([...data]);
-    }, [setUserData]);
+    };
 
     useEffect(() => {
         getData();
-    }, [getData]);
+    }, []);
 
     return (
         <section>
