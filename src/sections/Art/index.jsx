@@ -9,7 +9,6 @@ function ArtsSection() {
     fetch(URL)
       .then(res => res.json())
       .then(setData)
-      .then(console.log(data))
   }, [])
   return (
     <section>
