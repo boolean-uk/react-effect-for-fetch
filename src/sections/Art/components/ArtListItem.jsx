@@ -27,9 +27,9 @@ function ArtListItem() {
           <p>Artist: {art.artist}</p>
           <h4>Publication History:</h4>
           <ul>
-            <li>{art.publicationHistory[0]}</li>
-            <li>{art.publicationHistory[1]}</li>
-            <li>{art.publicationHistory[2]}</li>
+                {art.publicationHistory.map((historyItem, index) => (
+                    <li key={index}>{historyItem}</li>
+                ))}
           </ul>
     
       
