@@ -11,8 +11,6 @@ function ArtsSection() {
       .then(setArtworks)
   }, [])
 
-  console.log(artworks)
-
   return (
     <section>
       <h2>Arts Section</h2>

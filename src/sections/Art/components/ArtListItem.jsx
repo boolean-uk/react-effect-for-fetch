@@ -11,9 +11,11 @@ function ArtListItem(props) {
             <h3>{art.title}</h3>
             <p>Artist: {art.artist}</p>
             <h4>Publication history:</h4>
+            <ul>
             {art.publicationHistory.map((publication, index) => (
                 <PublicationHistory key={index} publication={publication} />
             ))}
+            </ul>
     </li>
     )
 }
