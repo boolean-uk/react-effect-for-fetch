@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import ArtListItem from './components/ArtListItem'
 import ArtList from './components/ArtList'
 
 function ArtsSection() {
