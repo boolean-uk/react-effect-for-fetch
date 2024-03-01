@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import AdviceSlip from './components/AdviceSlip'
+import FavouriteSlipList from './components/FavouriteSlipsList'
 
 function AdviceSection() {
   const [advice, setAdvice] = useState("")
@@ -12,7 +13,6 @@ function AdviceSection() {
       {cache: "no-store"})  // Prevents result from being cached, resulting in same response
       .then(response => response.json())
       .then(data => setAdvice(data.slip.advice))
-      console.log(adviceToggle + advice)
   }, [adviceToggle])
 
   const handleClick = (event) => {
@@ -26,24 +26,8 @@ function AdviceSection() {
   return (
     <section>
       <h2>Advice Section</h2>
-      <section className="advice-slip">
-        <h3>Some Advice</h3>
-        {advice !== "" &&
-        <p>{advice}</p>
-        }
-        <button value="getMore" onClick={handleClick}>Get More Advice</button>
-        <button value="favourite" onClick={handleClick}>Save to Favourites</button>
-    </section>
-      <section className="favourtite-slips-list">
-        <ul>
-        {favouriteSlips.map((favourite, index) => (
-          <li key={index}>
-            {favourite}
-          </li>
-        ))
-        }
-        </ul>
-      </section>
+      <AdviceSlip advice={advice} handleClick={handleClick} />
+      <FavouriteSlipList favouriteSlips={favouriteSlips}/>
     </section>
   )
 }
