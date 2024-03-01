@@ -3,7 +3,7 @@ function FavouriteSlipsList({favouriteAdvices}) {
 
     return (
         <section className="favourtite-slips-list">
-        {favouriteAdvices.length !== 0 ? (<h3>Favourite Advice Slips</h3>) : null}
+        {favouriteAdvices.length !== 0 && (<h3>Favourite Advice Slips</h3>)}
         <ul>
           {
             favouriteAdvices.map(advice => (
