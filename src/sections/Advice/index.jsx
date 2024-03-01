@@ -1,10 +1,17 @@
+import AdviceSlip from "./components/AdviceSlip"
+import FavouriteSlipsList from "./components/FavouriteSlipsList"
+
+import {useState, useEffect} from 'react'
+
 function AdviceSection() {
+
+  const [favouriteList, setFavouriteList] = useState([]);
+
   return (
-    <section>
-      <h2>Advice Section</h2>
-      <section className="adivce-slip"></section>
-      <section className="favourtite-slips-list"></section>
-    </section>
+  <section>
+    <AdviceSlip favouriteList={favouriteList} setFavouriteList={setFavouriteList} />
+    <FavouriteSlipsList favouriteList={favouriteList} setFavouriteList={setFavouriteList} />
+  </section>
   )
 }
 

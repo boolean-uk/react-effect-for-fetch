@@ -2,6 +2,7 @@ import AdviceSection from './sections/Advice'
 import ArtsSection from './sections/Art'
 import UsersSection from './sections/Users'
 import './App.css'
+import Test from './test'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <ArtsSection />
       <UsersSection />
       <AdviceSection />
+     {/*  <Test /> */}
     </div>
   )
 }
