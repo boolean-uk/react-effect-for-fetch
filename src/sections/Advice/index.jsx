@@ -8,14 +8,19 @@ function AdviceSection() {
   const [adviceToggle, setAdviceToggle] = useState(false)
 
   useEffect(() => {
-    fetch("https://api.adviceslip.com/advice")
+    fetch("https://api.adviceslip.com/advice",
+      {cache: "no-store"})  // Prevents result from being cached, resulting in same response
       .then(response => response.json())
       .then(data => setAdvice(data.slip.advice))
+      console.log(adviceToggle + advice)
   }, [adviceToggle])
 
   const handleClick = (event) => {
-    setAdviceToggle(!adviceToggle)
-    console.log(advice)
+    if(event.target.value === "getMore")
+      setAdviceToggle(!adviceToggle)
+    if(event.target.value === "favourite") {
+      setFavouriteSlips([...favouriteSlips, advice])
+    }
   }
 
   return (
@@ -26,9 +31,19 @@ function AdviceSection() {
         {advice !== "" &&
         <p>{advice}</p>
         }
-        <button onClick={handleClick}>Get More Advice</button>
+        <button value="getMore" onClick={handleClick}>Get More Advice</button>
+        <button value="favourite" onClick={handleClick}>Save to Favourites</button>
     </section>
-      <section className="favourtite-slips-list"></section>
+      <section className="favourtite-slips-list">
+        <ul>
+        {favouriteSlips.map((favourite, index) => (
+          <li key={index}>
+            {favourite}
+          </li>
+        ))
+        }
+        </ul>
+      </section>
     </section>
   )
 }
