@@ -13,7 +13,7 @@ function UsersSection() {
 
    
 
-  //console.log(user)
+  console.log(user)
 
   
   return (
@@ -22,7 +22,7 @@ function UsersSection() {
       <div className="scroll-container">
         <ul className="users-list">
         {user.map((user, index) => (
-          <li key={index} style={{background: '#0d7f26'}}>
+          <li key={index} style={{background: user.favouriteColour}}>
             <img
               src={`${user.profileImage}`}
               alt={`${user.firstName} ${user.lastName}`}
