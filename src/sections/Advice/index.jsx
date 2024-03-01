@@ -1,9 +1,20 @@
+import { useState } from "react"
+import AdviceSlip from "./components/AdviceSlip"
+import FavouriteSlipsList from "./components/FavouriteSlipsList"
+
 function AdviceSection() {
+  //Creating a list to store favourites
+  const [myFavourites, setMyFavourites] = useState([])
+
   return (
     <section>
       <h2>Advice Section</h2>
-      <section className="adivce-slip"></section>
-      <section className="favourtite-slips-list"></section>
+      {/*Passing the list down*/}
+      <AdviceSlip myFavourites={myFavourites}
+        setMyFavourites={setMyFavourites}/>
+        
+      {/*Passing the list down*/}
+      <FavouriteSlipsList myFavourites={myFavourites}/>
     </section>
   )
 }
