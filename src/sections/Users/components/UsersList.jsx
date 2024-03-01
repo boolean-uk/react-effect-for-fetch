@@ -4,7 +4,6 @@ function UserList({dataList}){
     
     
     if(dataList){
-        console.log(dataList)
         return(
             <ul className ="users-list">
               
