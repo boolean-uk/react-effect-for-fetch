@@ -9,7 +9,7 @@ function UsersListItem(props) {
 
     <li style={{background: user.favouriteColour}}>
         <img
-        src={`https://www.gravatar.com/avatar/${user.profileImage}`}
+        src={`${user.profileImage}`}
         alt= {user.firstName} />
         <h3>{user.gender + ", " + user.firstName + " " + user.lastName} </h3>
         <p>Email: {user.email}</p>
