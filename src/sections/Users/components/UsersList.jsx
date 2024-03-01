@@ -12,15 +12,15 @@ function UsersList() {
       .then((data) => setUserData(data))
     },  [])
   
-    useEffect(() => {
+    // useEffect(() => {
   
-      console.log("UseEffect:", userData)
-    },  [userData])
+    //   console.log("UseEffect:", userData)
+    // },  [userData])
 
   return (
     <ul className="users-list">
-      {userData.map(item => (
-       <UsersListItem item={item}/>
+      {userData.map((item, i) => (
+       <UsersListItem item={item} i={i}/>
       ))}
     </ul>
   )

@@ -19,8 +19,8 @@ const [artData, setArtData] = useState([])
     return (
 
     <ul className="art-list">
-      {artData.map(item => (
-       <li> 
+      {artData.map((item, i) => (
+       <li key={i}> 
         <ArtListItem item={item}/>
        </li>
       ))}
