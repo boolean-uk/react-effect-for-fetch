@@ -4,13 +4,20 @@ function AdviceSection() {
 
 
  
-  const [advice, setAdvice] = useState({});
+  const [advice, setAdvice] = useState({
+    slip: {
+      id:0, advice: "Don't always follow advices from the Internett"
+    }
+  });
   const [faveAdvice, setFaveAdvice] = useState([]);
 
 
 
-  useEffect(() => {
-    getAdvice();
+  useEffect( () => {
+    const fetchData = async () => {
+      await getAdvice();
+    }
+    
   }, []);
 
   const getAdvice = async () => {
