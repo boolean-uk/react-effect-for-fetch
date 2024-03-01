@@ -6,6 +6,12 @@ body {
   box-sizing: border-box;
 }
 
+h2 {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
 ul[class] {
   list-style: none;
 
@@ -45,4 +51,16 @@ img {
 
 .bg-pink {
   background-color: #f3e5f5;
+}
+
+.art-item {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid grey;
+  background: #f4f4f4ef;
+}
+
+.advice-section {
+  margin: 0px 5px;
+  padding: 0px 5px;
 }
