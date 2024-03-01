@@ -4,6 +4,7 @@ const baseURL = "https://boolean-api-server.fly.dev"
 
 function ArtsSection() {
   const [data, setData] = useState([])
+  
   useEffect(() => {
     fetch(baseURL + "/art")
       .then((response) => response.json())
