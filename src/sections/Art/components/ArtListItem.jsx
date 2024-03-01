@@ -1,17 +1,17 @@
 import React from 'react'
 import PublicationHistoryList from './PublicationHistoryList'
 
-function ArtListItem() {
+function ArtListItem({item}) {
   return (
     <li>
-    <div class="frame">
+    <div className="frame">
       <img
-        src="https://boolean-api-server.fly.dev/images/paris-street-rainy-day.jpg"
+        src={`https://boolean-api-server.fly.dev${item.imageURL}`}
       />
     </div>
-    <h3>Paris Street; Rainy Day</h3>
-    <p>Artist: Gustave Caillebotte</p>
-    <PublicationHistoryList />
+    <h3>{item.title}</h3>
+    <p>Artist: {item.artist}</p>
+    <PublicationHistoryList pub={item.publicationHistory}/>
   </li>
   )
 }

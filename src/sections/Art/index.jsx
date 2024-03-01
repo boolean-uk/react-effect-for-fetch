@@ -5,7 +5,7 @@ function ArtsSection() {
   return (
 <section>
   <h2>Arts Section</h2>
-  <div class="scroll-container">
+  <div className="scroll-container">
     <ArtList />
   </div>
 </section>

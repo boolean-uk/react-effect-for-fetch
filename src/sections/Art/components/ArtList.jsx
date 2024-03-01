@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ArtListItem from './ArtListItem'
+import { useState } from 'react'
 
 function ArtList() {
 
-    
+const [artData, setArtData] = useState([])
 
+  useEffect(() => {
+    fetch(`https://boolean-api-server.fly.dev/art`) 
+    .then((response) => response.json())
+    .then((data) => setArtData(data))
+  },  [])
+
+  // useEffect(() => {
+
+  //   console.log("UseEffect:", artData)
+  // },  [artData])
     return (
-    <ul class="art-list">
-        <ArtListItem />
+
+    <ul className="art-list">
+      {artData.map(item => (
+       <li> 
+        <ArtListItem item={item}/>
+       </li>
+      ))}
   </ul>
   )
 }
