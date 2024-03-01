@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import UsersList from "./components/UsersList";
 
 const baseURL = "https://boolean-api-server.fly.dev/maha897/contact"
 
@@ -15,18 +16,7 @@ function UsersSection() {
     <section>
       <h2>Users Section</h2>
       <div className="scroll-container">
-        <ul className="users-list">
-          {data.map((item, index) => (
-            <li key={index} style={{ background: item.favouriteColour }}>
-              <img
-                src={item.profileImage}
-                alt={`${item.firstName} ${item.lastName}`}
-              />
-              <h3>{`${item.firstName} ${item.lastName}`}</h3>
-              <p>Email: {item.email}</p>
-            </li>
-          ))}
-        </ul>
+        <UsersList data={data} />
       </div>
     </section>
   );

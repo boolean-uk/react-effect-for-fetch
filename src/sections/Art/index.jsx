@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import ArtList from "./components/ArtList"
 
-const baseURL = "https://boolean-api-server.fly.dev"
+const baseURL = 
 
 function ArtsSection() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch(baseURL + "/art")
+    fetch("https://boolean-api-server.fly.dev/art")
       .then((response) => response.json())
       .then(setData)
   }, [])
