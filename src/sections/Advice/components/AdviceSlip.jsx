@@ -1,7 +1,6 @@
 
 function AdviceSlip(props) {
   
-  console.log(props.adviceObject.slip.advice)
 
   return (
     <>
