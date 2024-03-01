@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 import FavouriteSlipsList from "./components/FavouriteSlipsList";
-
+import AdviceSlip from "./components/AdviceSlip";
 
 function AdviceSection() {
   const [currentAdvice, setCurrentAdvice] = useState(null);
   const [favouriteAdvices, setFavouriteAdvices] = useState([]);
 
   useEffect(() => {
-    getNewAdvice()
+    getNewAdvice();
   }, []);
 
   const saveAsFavourite = () => {
     //Check if advice already saved
-    for(const favouriteAdvice of favouriteAdvices) {
+    for (const favouriteAdvice of favouriteAdvices) {
       if (favouriteAdvice.id === currentAdvice.id) {
-        return
+        return;
       }
     }
-    setFavouriteAdvices([...favouriteAdvices, currentAdvice])
-  }
+    setFavouriteAdvices([...favouriteAdvices, currentAdvice]);
+  };
 
   const getNewAdvice = () => {
     fetch("https://api.adviceslip.com/advice")
@@ -29,18 +29,18 @@ function AdviceSection() {
       .then((responseData) => {
         setCurrentAdvice(responseData.slip);
       });
-  }
+  };
 
   return (
     <section>
       <h2>Advice Section</h2>
       <section className="adivce-slip">
         <h3>Some Advice</h3>
-        {currentAdvice && <p>{currentAdvice.advice}</p>}
-        <button onClick={getNewAdvice}>
-          Get More Advice
-        </button>
-        <button onClick={saveAsFavourite}>Save to Favourties</button>
+        <AdviceSlip
+          currentAdvice={currentAdvice}
+          getNewAdvice={getNewAdvice}
+          saveAsFavourite={saveAsFavourite}
+        />
       </section>
       <section className="favourtite-slips-list">
         <h3>Favourite Advice Slips</h3>
@@ -50,4 +50,4 @@ function AdviceSection() {
   );
 }
 
-export default AdviceSection
+export default AdviceSection;
