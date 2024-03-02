@@ -12,7 +12,6 @@ function UsersSection({baseUrl}) {
       .then((data) =>{SetUsers(data)})
   }, [userUrl])
 
-  console.log(users)
   return (
     <section>
       <h2>Users Section</h2>
