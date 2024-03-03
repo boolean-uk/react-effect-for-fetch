@@ -13,7 +13,7 @@ function UsersSection() {
     <section>
       <code><h2>Users Section</h2></code>
       <div className="scroll-container">
-        <ul class="users-list">
+        <ul className="users-list">
           {users.map((user, index) => (
             <li key={index} style={{ backgroundColor: user.favouriteColour }}>
               <img src={user.profileImage}/>
