@@ -6,12 +6,12 @@ import './App.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
+const GET_ART = "https://boolean-api-server.fly.dev/art";
+const GET_USERS = "https://boolean-api-server.fly.dev/guro18/contact";
+
 function App() {
   const [artdata, setArtData] = useState([]);
   const [userData, setUserData] = useState([]);
-
-  const GET_ART = "https://boolean-api-server.fly.dev/art";
-  const GET_USERS = "https://boolean-api-server.fly.dev/guro18/contact";
 
   useEffect(() => {
     console.log("fetching")

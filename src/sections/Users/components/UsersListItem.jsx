@@ -3,9 +3,9 @@ function UserListItem({data}) {
     const email = data ? data.email : "";
     const firstName = data ? data.firstName : "";
     const lastName = data ? data.lastName : "";
-    const FavColour = data ? data.favouriteColour : "";
+    const favColour = data ? data.favouriteColour : "";
     return(
-        <li style={{background: FavColour}}>
+        <li style={{background: favColour}}>
           <img
             src={imageURL}
           />
