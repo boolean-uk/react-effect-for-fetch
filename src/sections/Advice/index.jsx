@@ -10,7 +10,7 @@ function AdviceSection() {
             <h2>Advice Section</h2>
             <AdviceSlip setFavourites={setFavourites} favourites={favourites} />
 
-            {/* <FavourtieSlipsList/> */}
+            <FavourtieSlipsList favourites={favourites}/>
         </section>
     )
 }
