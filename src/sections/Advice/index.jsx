@@ -6,6 +6,7 @@ function AdviceSection() {
   const [firstFavourite, setFirstFavourite] = useState(null)
   const [secondFavourite, setSecondFavourite] = useState(null)
   const [thirdFavourite, setThirdFavourite] = useState(null)
+  const [newAdvice, setNewAdvice] = useState(null)
 
   useEffect(() => {
     fetch('https://api.adviceslip.com/advice')
@@ -24,7 +25,15 @@ function AdviceSection() {
       .then(res => res.json())
       .then(setThirdFavourite)
   }, [])
-  
+
+  const handleClick = () => {
+    fetch('https://api.adviceslip.com/advice/4')
+      .then(res => res.json())
+      .then(item => {
+        setNewAdvice(item.slip.advice)
+      })
+  }
+    
   return (
     <section>
       <h2>Advice Section</h2>
@@ -33,7 +42,7 @@ function AdviceSection() {
           <section key={random.slip.id} className="adivce-slip">
             <h3>Some Advice</h3>
             <p>{random.slip.advice}</p>
-            <button>Get More Advice</button>
+            <button onClick={handleClick}>Get More Advice</button>
             <button>Save to Favourties</button>
           </section>
           <section className="favourite-slips-list">
@@ -42,6 +51,7 @@ function AdviceSection() {
               <li>{firstFavourite.slip.advice}</li>
               <li>{secondFavourite.slip.advice}</li>
               <li>{thirdFavourite.slip.advice}</li>
+              {newAdvice && <li>{newAdvice}</li>}
             </ul>
           </section>
         </>
