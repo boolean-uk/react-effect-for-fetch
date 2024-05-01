@@ -14,7 +14,6 @@ useEffect(() => {
     .catch(new Error("Error in contact fetch"))
   }, [])
 
-  console.log(data)
 
 return(
 <ul className="users-list">
