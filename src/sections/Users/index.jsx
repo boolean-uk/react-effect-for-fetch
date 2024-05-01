@@ -10,7 +10,6 @@ function UsersSection() {
     const getData = async () => {
       const data = await fetch ('https://boolean-uk-api-server.fly.dev/MrStashy/contact')
       const json = await data.json()
-      console.log(json)
       setUsers(json)
     }
     getData()
