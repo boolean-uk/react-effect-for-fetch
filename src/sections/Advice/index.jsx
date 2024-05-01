@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useEffect } from "react"
+import AdviceSlip from "./components/AdviceSlip"
+import FavouriteSlipsList from "./components/FavouriteSlipsList"
 
 function AdviceSection() {
   const [random, setRandom] = useState(null)
@@ -28,7 +30,7 @@ function AdviceSection() {
   }, [])
 
   const handleClick = () => {
-    fetch('https://api.adviceslip.com/advice')
+    fetch('https://api.adviceslip.com/advice/4')
       .then(res => res.json())
       .then(item => {
         setNewAdvice(item.slip.advice)
@@ -40,21 +42,20 @@ function AdviceSection() {
       <h2>Advice Section</h2>
       {random && firstFavourite && secondFavourite && thirdFavourite && (
         <>
-          <section key={random.slip.id} className="adivce-slip">
-            <h3>Some Advice</h3>
-            <p>{random.slip.advice}</p>
-            <button onClick={handleClick}>Get More Advice</button>
-            <button onClick={() => {setSaveRandom(random.slip.advice)}}>Save to Favourties</button>
-          </section>
+          <AdviceSlip 
+            handleClick={handleClick} 
+            random={random} 
+            setSaveRandom={setSaveRandom}
+          />
           <section className="favourite-slips-list">
             <h3>Favourite Advice Slips</h3>
-            <ul>
-              <li>{firstFavourite.slip.advice}</li>
-              <li>{secondFavourite.slip.advice}</li>
-              <li>{thirdFavourite.slip.advice}</li>
-              {newAdvice && <li>{newAdvice}</li>}
-              {saveRandom && <li>{saveRandom}</li>}
-            </ul>
+            <FavouriteSlipsList 
+              firstFavourite={firstFavourite}
+              secondFavourite={secondFavourite}
+              thirdFavourite={thirdFavourite}
+              newAdvice={newAdvice}
+              saveRandom={saveRandom}
+            />
           </section>
         </>
       )}
