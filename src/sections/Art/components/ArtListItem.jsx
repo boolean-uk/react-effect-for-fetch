@@ -1,7 +1,6 @@
 import PublicationHistoryList from "./PublicationHistoryList"
 
 export default function ArtListItem({ item }) {
-    console.log(item)
     return(
         <li>
             <div className="frame">

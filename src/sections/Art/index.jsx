@@ -1,12 +1,12 @@
 import ArtList from "./components/ArtList"
 
-function ArtsSection({ artData }) {
+function ArtsSection() {
 
   return (
     <section>
       <h2>Arts Section</h2>
       <div className="scroll-container">
-        <ArtList artData={artData} />
+        <ArtList  />
       </div>
     </section>
   )
