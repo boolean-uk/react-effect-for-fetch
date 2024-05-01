@@ -19,7 +19,7 @@ export default function AdviceSlip( {setFavouriteAdvice, favouriteAdvice}) {
       <h3>Some Advice</h3>
       <p>{advice?.slip.advice}</p>
       <button onClick={getAdvice}>Get More Advice</button>
-      <button onClick={() => {setFavouriteAdvice([...favouriteAdvice, advice.slip.advice])}}>Save to Favourties</button>
+      <button onClick={() => {favouriteAdvice.includes(advice.slip.advice) ? undefined : setFavouriteAdvice([...favouriteAdvice, advice.slip.advice])}}>Save to Favourties</button>
     </section>
   );
 }
