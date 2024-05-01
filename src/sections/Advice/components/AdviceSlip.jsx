@@ -15,7 +15,7 @@ export default function AdviceSlip( {setFavouriteAdvice, favouriteAdvice}) {
   }, [])
 
   return (
-    <section className="adivce-slip">
+    <section className="advice-slip">
       <h3>Some Advice</h3>
       <p>{advice?.slip.advice}</p>
       <button onClick={getAdvice}>Get More Advice</button>
