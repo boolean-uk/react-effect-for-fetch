@@ -8,7 +8,7 @@ export default function AdviceSlip(props) {
         props.setFavourites([...props.favourites, advice])
     }
 
-    function handleUpdateClick() {
+    function handleUpdate() {
         fetch("https://api.adviceslip.com/advice")
         .then(response => response.json())
         .then(json => setAdvice(json.slip.advice))
@@ -16,14 +16,14 @@ export default function AdviceSlip(props) {
     
     
     useEffect(() => {
-        handleUpdateClick()
+        handleUpdate()
     }, [])
 
     return (
         <section className="adivce-slip">
             <h3>Some Advice</h3>
             <p>{advice}</p>
-            <button onClick={handleUpdateClick}>Get More Advice</button>
+            <button onClick={handleUpdate}>Get More Advice</button>
             <button onClick={handleFavouritesClick}>Save to Favourties</button>
         </section>
     )
