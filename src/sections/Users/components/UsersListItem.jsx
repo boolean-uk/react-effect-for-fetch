@@ -1,5 +1,4 @@
 export default function UsersListItem({ user }) {
-    console.log(user)
     return (
         <li style={{background: `${user.favouriteColour}`}}>
             <img
