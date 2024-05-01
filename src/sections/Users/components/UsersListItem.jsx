@@ -1,7 +1,7 @@
 export default function UsersListItem({e}) {
     return (
         <>
-            <li style={{background: "#0d7f26"}}>
+            <li style={{background: e.favouriteColour}}>
                 <img
                     src={e.profileImage}
                     alt={`${e.firstName} ${e.lastName}`}
