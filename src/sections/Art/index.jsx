@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useEffect } from "react"
+import ArtList from "./components/ArtList"
 
 function ArtsSection() {
   const [arts, setArts] = useState([])
@@ -15,23 +16,7 @@ function ArtsSection() {
       <h2>Arts Section</h2>
       <div className="scroll-container">
         {arts.map(art => 
-          <ul key={art.id} className="art-list">
-            <li>
-              <div className="frame">
-                <img
-                  src={`https://boolean-api-server.fly.dev${art.imageURL}`}
-                />
-              </div>
-              <h3>{art.title}</h3>
-              <p>Artist: {art.artist}</p>
-              <h4>Publication History:</h4>
-              <ul>
-                <li>{art.publicationHistory[0]}</li>
-                <li>{art.publicationHistory[1]}</li>
-                <li>{art.publicationHistory[2]}</li>
-              </ul>
-            </li>
-          </ul>
+          <ArtList key={art.id} art={art} />
         )}
       </div>
     </section>
