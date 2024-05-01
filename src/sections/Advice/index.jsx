@@ -1,4 +1,6 @@
 function AdviceSection() {
+  
+  
   return (
     <section>
       <h2>Advice Section</h2>
