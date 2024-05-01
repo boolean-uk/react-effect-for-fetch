@@ -1,3 +1,5 @@
+import PublicationHistoryList from "./PublicationHistoryList"
+
 export default function ArtListItem({e}) {
     return(
         <li>
@@ -8,15 +10,9 @@ export default function ArtListItem({e}) {
                 <p>Artist: {e.artist}</p>
                 <h4>Publication History:</h4>
                 <ul>
-                    <li>
-                        {e.publicationHistory[0]}
-                    </li>
-                    <li>
-                    {e.publicationHistory[1]}
-                    </li>
-                    <li>
-                    {e.publicationHistory[2]}
-                    </li>
+                    {e.publicationHistory.map((e,index) => {
+                    return(<PublicationHistoryList e={e} key={index}/>)
+                    })}
                 </ul>
             </li>
     )
