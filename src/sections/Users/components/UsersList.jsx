@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import UsersListITem from "./components/UsersListItem"
+import UsersListITem from "./UsersListItem"
 
 export default function UsersList() {
     const [user, setUser] = useState([])
@@ -9,7 +9,6 @@ export default function UsersList() {
           .then(response => response.json())
           .then(setUser)
       }, [])
-      console.log(user)
 
     return (
         <ul className="users-list">
