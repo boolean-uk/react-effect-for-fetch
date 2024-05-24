@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="main-layout">
       <ArtsSection baseUrl={baseUrl}/>
-      <UsersSection />
+      <UsersSection baseUrl={baseUrl}/>
       <AdviceSection />
     </div>
   )
