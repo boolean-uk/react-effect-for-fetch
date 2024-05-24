@@ -1,4 +1,3 @@
-//import state, ArtList and PropTypes
 import { useEffect, useState } from "react"
 import ArtList from "./components/ArtList"
 import PropTypes from 'prop-types'

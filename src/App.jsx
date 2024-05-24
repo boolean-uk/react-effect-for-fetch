@@ -6,7 +6,6 @@ import { useState } from 'react'
 
 function App() {
   const[baseUrl, setbaseUrl] = useState("https://boolean-uk-api-server.fly.dev/")
-  //render comps and pass props
   return (
     <div className="main-layout">
       <ArtsSection baseUrl={baseUrl}/>
