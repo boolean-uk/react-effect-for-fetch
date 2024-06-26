@@ -5,19 +5,17 @@ function AdviceSection() {
   const [advice, setAdvice] = useState([])
   const [favourites, setFavourites] = useState([])
 
-  useEffect(() => {
+    useEffect(() => {
     fetch('https://api.adviceslip.com/advice')
       .then(response => response.json())
-      .then(json => setAdvice({...json}))
+      .then(json => setAdvice(json.slip))
   }, [])
-
-  const adviceSlip = advice.slip.advice
   
   const addToFavourites = () => {
-
-    setFavourites({
-      ...adviceSlip
-    })
+    setFavourites([
+      ...favourites, {
+      ...advice
+    }])
   }
 
   return (
@@ -25,15 +23,15 @@ function AdviceSection() {
       <h2>Advice Section</h2>
       <section className="adivce-slip">
         <h3>Some Advice</h3>
-        <p>{adviceSlip}</p>
+        <p>{advice.advice}</p>
         <button onClick={setAdvice}>Get More Advice</button>
         <button onClick={addToFavourites}>Save to Favourites</button>
       </section>
       <section className="favourtite-slips-list">
         <h3>Favourite Advice Slips</h3>
         <ul>
-          {favourites.map((favourite, index) =>
-            <li key={index}>{favourite.advice}</li>)}
+          {favourites.map((favourite) =>
+            <li key={favourite.id}>{favourite.advice}</li>)}
         </ul>
       </section>
     </section>
