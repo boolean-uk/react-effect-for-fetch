@@ -2,7 +2,7 @@ import PublicationHistoryList from "./PublicationHistoryList";
 
 export default function ArtListItem({ artItem, index }) {
   return (
-    <li key={index}>
+    <li>
       <div className="frame">
         <img src={`https://boolean-api-server.fly.dev${artItem.imageURL}`} />
       </div>

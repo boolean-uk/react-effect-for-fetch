@@ -1,4 +1,4 @@
-export default function PublicationHistoryList({index, publication}) {
+export default function PublicationHistoryList({ publication}) {
     return (
         <li>{publication}</li>
     )

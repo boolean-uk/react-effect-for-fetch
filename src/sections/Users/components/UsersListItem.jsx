@@ -1,6 +1,6 @@
 export default function UsersListItem({ userItem, index }) {
   return (
-    <li key={index} style={{ background: `${userItem.favouriteColour}` }}>
+    <li style={{ background: `${userItem.favouriteColour}` }}>
       <img
         src={userItem.profileImage}
         alt={`${userItem.firstName} ${userItem.lastName}`}

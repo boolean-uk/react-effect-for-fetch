@@ -3,8 +3,7 @@ import UsersList from "./components/UsersList";
 
 function UsersSection() {
   const [userData, setUserData] = useState([]);
-  console.log("user data", userData);
-
+  
   useEffect(() => {
     fetch("https://boolean-uk-api-server.fly.dev/zainabch123/contact")
       .then((res) => res.json())

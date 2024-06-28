@@ -3,7 +3,6 @@ import ArtList from './components/ArtList'
 
 function ArtsSection() {
   const [artData, setArtData] = useState([]);
-  console.log("art Data:", artData);
 
   useEffect(() => {
     fetch("https://boolean-uk-api-server.fly.dev/art")

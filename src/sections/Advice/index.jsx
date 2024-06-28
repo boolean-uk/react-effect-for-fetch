@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
+import AdviceSlip from "./components/AdviceSlip";
+import FavouriteSlipsList from "./components/FavouriteSlipsList";
 
 function AdviceSection() {
   const [randomAdvice, setRandowAdvice] = useState("");
-  const [favourtiteAdvice, setFavouriteAdvice] = useState([]);
+  const [favouriteAdvice, setFavouriteAdvice] = useState([]);
   const [getAdvice, setGetAdvice] = useState(false);
-  console.log("random Advice Data", randomAdvice);
-  console.log("favourite Advice", favourtiteAdvice);
-  console.log("get Advice", getAdvice);
 
   useEffect(() => {
     fetch("https://api.adviceslip.com/advice")
@@ -14,32 +13,17 @@ function AdviceSection() {
       .then((data) => setRandowAdvice(data.slip.advice));
   }, [getAdvice]);
 
-  function handleAddFavourite() {
-    favourtiteAdvice.includes(randomAdvice)
-      ? console.log("advice already included in favourites")
-      : setFavouriteAdvice([...favourtiteAdvice, randomAdvice]);
-  }
-
-  function handleGetAdvice(event) {
-    setGetAdvice(!getAdvice);
-  }
   return (
     <section>
       <h2>Advice Section</h2>
-      <section className="adivce-slip">
-        <h3>Some Advice</h3>
-        <p>{randomAdvice}</p>
-        <button onClick={handleGetAdvice}>Get More Advice</button>
-        <button onClick={handleAddFavourite}>Save to Favourties</button>
-      </section>
-      <section className="favourtite-slips-list">
-        <h3>Favourite Advice Slips</h3>
-        <ul>
-          {favourtiteAdvice.map((advice, index) => (
-            <li key={index}>{advice}</li>
-          ))}
-        </ul>
-      </section>
+      <AdviceSlip
+        randomAdvice={randomAdvice}
+        getAdvice={getAdvice}
+        setGetAdvice={setGetAdvice}
+        setFavouriteAdvice={setFavouriteAdvice}
+        favouriteAdvice={favouriteAdvice}
+      />
+      <FavouriteSlipsList favouriteAdvice={favouriteAdvice} />
     </section>
   );
 }
