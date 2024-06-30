@@ -1,10 +1,15 @@
+import React from "react";
+import ArtList from "./components/ArtList";
+
 function ArtsSection() {
   return (
     <section>
       <h2>Arts Section</h2>
-      <div className="scroll-container"></div>
+      <div className="scroll-container">
+        <ArtList />
+      </div>
     </section>
-  )
+  );
 }
 
-export default ArtsSection
+export default ArtsSection;
