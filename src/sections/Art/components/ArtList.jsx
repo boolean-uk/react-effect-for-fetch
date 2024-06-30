@@ -8,7 +8,7 @@ const ArtList = () => {
     fetch("https://boolean-uk-api-server.fly.dev/art")
       .then((response) => response.json())
       .then((data) => {
-        console.log("API Response:", data); // Log the API response
+        console.log("API Response:", data);
         setArts(data);
       })
       .catch((error) => console.error("Error fetching art data:", error));

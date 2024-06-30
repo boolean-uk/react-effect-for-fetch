@@ -8,7 +8,7 @@ const UsersList = () => {
     fetch("https://boolean-uk-api-server.fly.dev/gent009/contact")
       .then((response) => response.json())
       .then((data) => {
-        console.log("API Response:", data); // Log the API response
+        console.log("API Response:", data);
         setUsers(data);
       })
       .catch((error) => console.error("Error fetching user data:", error));

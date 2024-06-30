@@ -14,7 +14,7 @@ const AdviceSection = () => {
     fetch("https://api.adviceslip.com/advice")
       .then((response) => response.json())
       .then((data) => {
-        console.log("API Response:", data.slip); // Log the API response
+        console.log("API Response:", data.slip);
         setAdvice(data.slip.advice);
       })
       .catch((error) => console.error("Error fetching advice:", error));
