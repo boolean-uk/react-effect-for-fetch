@@ -42,19 +42,21 @@ img {
   background-color: #f3e5f5;
 }
 
-/* Additional styles to ensure text visibility */
-.art-list li {
+/* Additional styles to ensure proper layout */
+.art-list li,
+.users-list li {
   display: flex;
   flex-direction: column;
-}
-
-.frame {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-.frame img {
+.users-list li img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.art-list li img {
   width: 100%;
   height: auto;
 }
@@ -65,4 +67,17 @@ h3 {
 
 h4 {
   margin: 10px 0 5px;
+}
+
+.advice-slip,
+.favourite-slips-list {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.21);
+}
+
+.advice-slip button,
+.favourite-slips-list button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
 }
