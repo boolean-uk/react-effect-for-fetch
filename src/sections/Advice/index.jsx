@@ -1,11 +1,16 @@
-function AdviceSection() {
+import React from "react";
+import ReactDOM from "react-dom";
+import AdviceSection from "./components/AdviceSection";
+import "./style.css";
+
+function App() {
   return (
-    <section>
-      <h2>Advice Section</h2>
-      <section className="adivce-slip"></section>
-      <section className="favourtite-slips-list"></section>
-    </section>
-  )
+    <div className="main-layout">
+      <AdviceSection />
+    </div>
+  );
 }
 
-export default AdviceSection
+ReactDOM.render(<App />, document.getElementById("root"));
+
+export default App;

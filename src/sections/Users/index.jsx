@@ -1,10 +1,17 @@
-function UsersSection() {
+import React from "react";
+import ReactDOM from "react-dom";
+
+import UsersSection from "./components/UsersSection";
+import "./style.css";
+
+function App() {
   return (
-    <section>
-      <h2>Users Section</h2>
-      <div className="scroll-container"></div>
-    </section>
-  )
+    <div className="main-layout">
+      <UsersSection />
+    </div>
+  );
 }
 
-export default UsersSection
+ReactDOM.render(<App />, document.getElementById("root"));
+
+export default App;

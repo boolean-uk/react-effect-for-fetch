@@ -1,10 +1,16 @@
-function ArtsSection() {
+import React from "react";
+import ReactDOM from "react-dom";
+import ArtsSection from "./components/ArtsSection";
+import "./style.css";
+
+function App() {
   return (
-    <section>
-      <h2>Arts Section</h2>
-      <div className="scroll-container"></div>
-    </section>
-  )
+    <div>
+      <ArtsSection />
+    </div>
+  );
 }
 
-export default ArtsSection
+ReactDOM.render(<App />, document.getElementById("root"));
+
+export default App;
