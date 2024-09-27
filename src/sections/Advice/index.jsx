@@ -1,9 +1,12 @@
-function AdviceSection() {
+import AdviceSlip from '../Advice/components/AdviceSlip'
+import FavouriteSlipsList from './components/FavouriteSlipsList'
+
+function AdviceSection({randomAdvice, addToFavorite, favoriteAdvices, generateRandomAdvice}) {
+
   return (
     <section>
-      <h2>Advice Section</h2>
-      <section className="adivce-slip"></section>
-      <section className="favourtite-slips-list"></section>
+      <AdviceSlip randomAdvice={randomAdvice} addToFavorite={addToFavorite} generateRandomAdvice={generateRandomAdvice} />
+      <FavouriteSlipsList favoriteAdvices={favoriteAdvices} /> 
     </section>
   )
 }
