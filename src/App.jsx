@@ -10,7 +10,8 @@ function App() {
       <UsersSection />
       <AdviceSection />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
