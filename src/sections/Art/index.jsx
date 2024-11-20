@@ -1,9 +1,24 @@
+import { useEffect, useState } from "react";
+import ArtList from "./components/ArtList"
+
 function ArtsSection() {
+
+
+
+  const [arts, setArts] = useState([]);
+
+
+
+  useEffect(() => {
+    fetch("https://boolean-api-server.fly.dev/art")
+    .then(response => response.json())
+    .then(setArts)
+
+  }, []);
+
+
   return (
-    <section>
-      <h2>Arts Section</h2>
-      <div className="scroll-container"></div>
-    </section>
+    <ArtList arts={arts}/>
   )
 }
 
