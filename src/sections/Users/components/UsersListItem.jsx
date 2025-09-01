@@ -10,7 +10,7 @@ export default function UsersListItem({user : {favouriteColour, profileImage, fi
           src={profileImage}
           alt={firstName}
         />
-        <h3>{`"${firstName} ${lastName}"`}</h3>
+        <h3>{`${firstName} ${lastName}`}</h3>
         <p>{` ${email}"`}</p>
       </li>
  </> ) 
