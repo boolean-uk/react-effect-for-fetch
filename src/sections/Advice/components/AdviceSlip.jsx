@@ -16,7 +16,7 @@ function AdviceSlip(props) {
         <input
           id="addButton"
           type="button"
-          value="Save to favorites"
+          value="Save to favourites"
           onClick={() =>
             setFavData((prev) => [...prev, data.slip.advice])
           }
