@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import ArtListItem from "./ArtListItem"
 
 function ArtList () {
       const url = "https://boolean-uk-api-server.fly.dev/art"
@@ -15,22 +16,9 @@ function ArtList () {
 
     return(
         <ul className="art-list">
-            {artWorks.map((artWork, index) => (
-                <li key={index}>
-                    <div className="frame">
-                        <img src={`https://boolean-uk-api-server.fly.dev${artWork.imageURL}`}/>
-                    </div>
-                    <h3>{artWork.title}</h3>
-                    <p>Artist: {artWork.artist}</p>
-                    <h4>Publication History:</h4>
-                    <ul>
-                        {artWork.publicationHistory.map((publication, index) => (
-                            <li key={index}>{publication}</li>
-                        ))}
-                    </ul>
-                </li>
+            {artWorks.map((artwork, index) => (
+                <ArtListItem key={index} artwork={artwork}/>
             ))}
-            
         </ul>
     )
 }
