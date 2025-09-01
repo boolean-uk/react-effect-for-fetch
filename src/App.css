@@ -46,3 +46,7 @@ img {
 .bg-pink {
   background-color: #f3e5f5;
 }
+
+#getButton {
+  margin-right: 20px;
+}
