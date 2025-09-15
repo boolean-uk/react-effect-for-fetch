@@ -13,7 +13,7 @@ function ArtList(props) {
         };
         fetchData();
     }, []);
-    
+
     const getFullImageUrl = (imageUrl) => {
         return url.replace("art", imageUrl);
     }
@@ -22,9 +22,8 @@ function ArtList(props) {
         <ul className="art-list">
             {
                 data.map((item, index) => (
-                    <li key={index}>
-                        <ArtListItem title={item.title} artist={item.artist} imageURL={getFullImageUrl(item.imageURL)} publicationHistory={item.publicationHistory}/>
-                    </li>
+                    <ArtListItem title={item.title} artist={item.artist} imageURL={getFullImageUrl(item.imageURL)}
+                                 publicationHistory={item.publicationHistory} key={index}/>
                 ))
             }
         </ul>
