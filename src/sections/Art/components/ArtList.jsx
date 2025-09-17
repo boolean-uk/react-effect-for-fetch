@@ -10,10 +10,7 @@ export default function ArtList() {
 
     fetch('https://boolean-uk-api-server.fly.dev/art')
     .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      setArt(data) 
-    })
+    .then(data => setArt(data))
 
   }, [])
 

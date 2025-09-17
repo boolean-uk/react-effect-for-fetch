@@ -1,6 +1,6 @@
 
 export default function UsersListItem({ contactInfo }) {
-  console.log(contactInfo)
+
   return (
     <>
     <li style={{ background: `${contactInfo.favouriteColour}` }}>
